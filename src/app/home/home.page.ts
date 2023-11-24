@@ -1,8 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RefresherCustomEvent } from '@ionic/angular';
-import { MessageComponent } from '../message/message.component';
-
-import { DataService, Message } from '../services/data.service';
+import {Circle} from "../models/circle.model";
 
 @Component({
   selector: 'app-home',
@@ -10,16 +7,25 @@ import { DataService, Message } from '../services/data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  private data = inject(DataService);
-  constructor() {}
 
-  refresh(ev: any) {
-    setTimeout(() => {
-      (ev as RefresherCustomEvent).detail.complete();
-    }, 3000);
+  public circles: Array<Circle> = [
+    {name: "test", "wipe_auth_token": "lol", wipe_status: 1},
+  ];
+
+  constructor() {
+
+    let circle = new Circle();
+    circle.name = "lol";
+    circle.wipe_auth_token = "diller";
+    circle.wipe_status = 2;
+    this.circles.push(circle);
+
+
+    for(let i = 0; this.circles.length > i++;) {
+      console.log(this.circles[1].wipe_auth_token);
+    }
+
   }
 
-  getMessages(): Message[] {
-    return this.data.getMessages();
-  }
+
 }
