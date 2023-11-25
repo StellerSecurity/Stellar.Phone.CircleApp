@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import {Circle} from "../models/circle.model";
+import {CircledataService} from "../services/circledata.service";
 
 @Component({
   selector: 'app-home',
@@ -8,24 +9,29 @@ import {Circle} from "../models/circle.model";
 })
 export class HomePage {
 
-  public circles: Array<Circle> = [
-    {name: "test", "wipe_auth_token": "lol", wipe_status: 1},
-  ];
+  public circles: Circle[] = [];
 
-  constructor() {
+  constructor(public circleDataService: CircledataService) {
 
     let circle = new Circle();
     circle.name = "lol";
     circle.wipe_auth_token = "diller";
     circle.wipe_status = 2;
-    this.circles.push(circle);
 
+    this.circleDataService.add(circle).then(r => {});
 
-    for(let i = 0; this.circles.length > i++;) {
-      console.log(this.circles[1].wipe_auth_token);
-    }
-
+    this.init();
   }
 
+
+  public async init() {
+
+    this.circles = await this.circleDataService.circles();
+
+    this.circles.forEach(circle=> {
+      console.log(circle);
+    });
+
+  }
 
 }
