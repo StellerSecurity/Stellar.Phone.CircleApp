@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Circle} from "../models/circle.model";
 import { Storage } from '@ionic/storage';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {catchError} from "rxjs";
+import {catchError, Subject} from "rxjs";
 import {environment} from "../../environments/environment";
 
 @Injectable({
@@ -43,17 +43,18 @@ export class CircledataService {
     let circles = await this.circles();
     circles[index] = circle;
     await this.storage.set(this.CIRCLE_LOCAL_STORAGE_KEY, JSON.stringify(circles));
+    await this.circles();
   }
 
-  public async circles() {
+  public async circles(): Promise<Circle[]> {
 
     let circles = await this.storage.get(this.CIRCLE_LOCAL_STORAGE_KEY);
 
-    if(circles === null) {
+    if (circles === null) {
       return [];
     }
 
-    return JSON.parse(circles);
+    return JSON.parse(await circles);
 
   }
 

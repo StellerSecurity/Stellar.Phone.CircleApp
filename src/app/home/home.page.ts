@@ -33,14 +33,20 @@ export class HomePage {
     this.addCircleModelVisible = !this.addCircleModelVisible;
   }
 
+  /**
+   * This solution is fucking bad. Should be observable.
+   */
   public async init() {
-    this.circles = await this.circleDataService.circles();
+      this.circles = await this.circleDataService.circles();
+      setInterval(async () => {
+        this.circles = await this.circleDataService.circles();
+      }, 2500);
   }
 
   public async addCircle() {
 
-    console.log(this.addCircleModal);
-    if (this.addCircleModal.name.length == 0) {
+    console.log(this.circleNameAdd);
+    if (this.circleNameAdd.length == 0) {
       const alert = await this.alertController.create({
         header: 'Error',
         message: 'Your contact must have a nick-name. It cannot be empty.',
@@ -51,7 +57,7 @@ export class HomePage {
       return;
     }
 
-    if (this.addCircleModal.wipe_auth_token.length == 0) {
+    if (this.circleToken.length == 0) {
       const alert = await this.alertController.create({
         header: 'Error',
         message: 'Your contact must have a Wipe Token. It cannot be empty.',
@@ -94,7 +100,6 @@ export class HomePage {
 
           await this.circleDataService.add(this.addCircleModal);
           this.modelToggleAdd();
-          await this.init();
           return;
         }
 

@@ -14,10 +14,10 @@
 
   <h4 class="ion-padding">Circles</h4>
 
-  <p class="ion-padding" *ngIf="circles.length == 0">
+  <!--<p class="ion-padding" *ngIf="circleDataService.circles().length == 0">
     You dont have any contacts added.
     Click on the "+" icon to add a contact in Circles.
-  </p>
+  </p>-->
 
   <!-- circles -->
   <app-circles *ngFor="let circle of circles; index as i" [circle]="circle" [index]="i"></app-circles>
@@ -54,7 +54,7 @@
             labelPlacement="stacked"
             type="text"
             placeholder="Enter a nickname for your contact"
-            [ngModel]="circleNameAdd"
+            [(ngModel)]="circleNameAdd"
           ></ion-input>
         </ion-item>
 
@@ -64,7 +64,7 @@
             labelPlacement="stacked"
             type="text"
             placeholder="Enter your friends Wipe Auth Token"
-            [ngModel]="circleToken"
+            [(ngModel)]="circleToken"
           ></ion-input>
         </ion-item><br>
 
