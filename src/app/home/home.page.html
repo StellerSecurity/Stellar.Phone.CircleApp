@@ -14,10 +14,10 @@
 
   <h4 class="ion-padding">Circles</h4>
 
-  <!--<p class="ion-padding" *ngIf="circleDataService.circles().length == 0">
+  <p class="ion-padding" *ngIf="circles.length == 0">
     You dont have any contacts added.
     Click on the "+" icon to add a contact in Circles.
-  </p>-->
+  </p>
 
   <!-- circles -->
   <app-circles *ngFor="let circle of circles; index as i" [circle]="circle" [index]="i"></app-circles>
