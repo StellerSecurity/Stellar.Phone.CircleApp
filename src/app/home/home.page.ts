@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import {Circle} from "../models/circle.model";
 import {CircledataService} from "../services/circledata.service";
+import {AlertController, LoadingController} from "@ionic/angular";
+import {WipeStatusEnum} from "../WipeStatusEnum";
 
 @Component({
   selector: 'app-home',
@@ -11,26 +13,93 @@ export class HomePage {
 
   public circles: Circle[] = [];
 
-  constructor(public circleDataService: CircledataService) {
+  public addCircleModal = new Circle();
 
-    let circle = new Circle();
-    circle.name = "lol";
-    circle.wipe_auth_token = "diller";
-    circle.wipe_status = 2;
+  public addCircleModelVisible = false;
 
-    this.circleDataService.add(circle).then(r => {});
+  public circleNameAdd: string = "";
 
-    this.init();
+  public circleToken: string = "";
+
+
+  constructor(public circleDataService: CircledataService,
+              public alertController: AlertController,
+              private loadingCtrl: LoadingController) {
+      this.addCircleModal.wipe_status = WipeStatusEnum.ACTIVE;
+      this.init().then(r => {});
   }
 
+  public modelToggleAdd() {
+    this.addCircleModelVisible = !this.addCircleModelVisible;
+  }
 
   public async init() {
-
     this.circles = await this.circleDataService.circles();
+  }
 
-    this.circles.forEach(circle=> {
-      console.log(circle);
+  public async addCircle() {
+
+    console.log(this.addCircleModal);
+    if (this.addCircleModal.name.length == 0) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Your contact must have a nick-name. It cannot be empty.',
+        buttons: ['OK'],
+      });
+
+      await alert.present();
+      return;
+    }
+
+    if (this.addCircleModal.wipe_auth_token.length == 0) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Your contact must have a Wipe Token. It cannot be empty.',
+        buttons: ['OK'],
+      });
+
+      await alert.present();
+      return;
+    }
+
+    const loading = await this.loadingCtrl.create({
+      message: 'Checking if token is correct...'
     });
+
+    await loading.present();
+
+    this.addCircleModal.name = this.circleNameAdd;
+    this.addCircleModal.wipe_auth_token = this.circleToken;
+
+    (await this.circleDataService.circleTokenCheck(this.addCircleModal))
+      .subscribe(async response => {
+
+        await loading.dismiss();
+
+        if (response.response_code !== 200) {
+          const alert = await this.alertController.create({
+            header: 'Error',
+            message: response.message,
+            buttons: ['OK'],
+          });
+
+          await alert.present();
+          return;
+        }
+
+        if(response.response_code === 200) {
+
+          this.circleNameAdd = "";
+          this.circleToken = "";
+
+          await this.circleDataService.add(this.addCircleModal);
+          this.modelToggleAdd();
+          await this.init();
+          return;
+        }
+
+      });
+
 
   }
 

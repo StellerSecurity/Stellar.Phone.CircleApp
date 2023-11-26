@@ -12,9 +12,69 @@
     <p>All contacts you add here is stored on your phone, and not on any server.</p>
   </div>
 
-  <h5 class="ion-padding">Circles</h5>
+  <h4 class="ion-padding">Circles</h4>
+
+  <p class="ion-padding" *ngIf="circles.length == 0">
+    You dont have any contacts added.
+    Click on the "+" icon to add a contact in Circles.
+  </p>
 
   <!-- circles -->
-  <app-circles></app-circles>
+  <app-circles *ngFor="let circle of circles; index as i" [circle]="circle" [index]="i"></app-circles>
+
+  <!-- add -->
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="modelToggleAdd()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- add modal -->
+  <ion-modal [isOpen]="addCircleModelVisible">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Add Contact</ion-title>
+          <ion-buttons slot="end" (click)="modelToggleAdd()">
+            <ion-button>Cancel</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          To add a Contact, please add a Nickname for your contact and their Wipe Token which they can see on <strong>Stellar Protect</strong> app.
+        </p>
+
+        <hr>
+
+        <ion-item>
+          <ion-input
+            label="Enter a nickname for your contact"
+            labelPlacement="stacked"
+            type="text"
+            placeholder="Enter a nickname for your contact"
+            [ngModel]="circleNameAdd"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Enter your contact Wipe Auth Token"
+            labelPlacement="stacked"
+            type="text"
+            placeholder="Enter your friends Wipe Auth Token"
+            [ngModel]="circleToken"
+          ></ion-input>
+        </ion-item><br>
+
+        <ion-button expand="block" (click)="addCircle()">Add Contact</ion-button>
+        <br><br>
+        * A contact is only stored on your phone, and not on any server.
+
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
 
 </ion-content>

@@ -1,19 +1,15 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-title>Daniel</ion-card-title>
+    <ion-card-title>{{circle.name}}</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
-    Token: 13123123
+    Token: {{circle.wipe_auth_token}}
   </ion-card-content>
 
   <ion-button color="primary" (click)="delete()">Remove from Circle</ion-button>
-  <ion-button color="danger" (click)="wipe()">Wipe phone</ion-button>
+
+
+  <ion-button color="danger" (click)="wipe()" *ngIf="circle.wipe_status == WipeStatusEnum.ACTIVE">Wipe phone</ion-button>
+  <p *ngIf="circle.wipe_status !== WipeStatusEnum.ACTIVE">The phone has been wiped or is set to be wiped</p>
 </ion-card>
-
-
-<ion-fab slot="fixed" vertical="bottom" horizontal="end">
-  <ion-fab-button>
-    <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
