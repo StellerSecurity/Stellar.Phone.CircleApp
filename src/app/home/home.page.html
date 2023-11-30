@@ -5,7 +5,10 @@
 >
 </circle-navbar>
 
-<ion-content [fullscreen]="true" class="{{circles.length == 0 ? 'px-c-2' : 'px-c-1'}}">
+<ion-content
+  [fullscreen]="true"
+  class="{{circles.length == 0 ? 'px-c-2' : 'px-c-1'}}"
+>
   <ion-list lines="none">
     <ion-item class="p-intro">
       <p>
@@ -47,12 +50,12 @@
         class="serach-icon"
         src="assets/icon/search-lg.png"
       ></ion-img>
-      <input placeholder="Search"/>
+      <input placeholder="Search" [(ngModel)]="search" (change)="handleSearch()"/>
     </div>
   </ion-item>
 
   <!-- circles -->
-  <contact-list [contacts]="circles" class="pt-4"></contact-list>
+  <contact-list [contacts]="filteredCircles" class="pt-4"></contact-list>
 
   <!-- add -->
   <ion-fab
@@ -92,7 +95,9 @@
         </ion-row>
 
         <ion-list lines="none">
-          <p class="label"><ion-text color="circle-black">Nickname</ion-text></p>
+          <p class="label">
+            <ion-text color="circle-black">Nickname</ion-text>
+          </p>
           <ion-item class="mb-6">
             <ion-input
               placeholder="Enter a nickname"
@@ -100,7 +105,9 @@
               [(ngModel)]="circleNameAdd"
             ></ion-input>
           </ion-item>
-          <p class="label"><ion-text color="circle-black">Wipe Auth Token</ion-text></p>
+          <p class="label">
+            <ion-text color="circle-black">Wipe Auth Token</ion-text>
+          </p>
           <ion-item class="mb-6">
             <ion-input
               placeholder="Wipe Auth Token"
@@ -110,7 +117,12 @@
           </ion-item>
         </ion-list>
 
-        <circle-button value="Add Contact" className="radius-2 font-md text-md" color="circle-green" (onClick)="addCircle()"></circle-button>
+        <circle-button
+          value="Add Contact"
+          className="radius-2 font-md text-md"
+          color="circle-green"
+          (onClick)="addCircle()"
+        ></circle-button>
         <p class="mt-6">
           <ion-text color="circle-dark-grey">
             * A contact is only stored on your phone, and not on any server.
