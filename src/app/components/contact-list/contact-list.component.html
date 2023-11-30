@@ -1,0 +1,23 @@
+<ion-list lines="inset">
+  <ng-container *ngFor="let contact of contacts; index as i">
+    <ion-item>
+      <ion-toolbar>
+        <ion-title color="circle-black"> {{ contact.name }} </ion-title>
+      </ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button
+          fill="clear"
+          (click)="wipe(i)"
+        >
+          <ion-img src="assets/icon/clear.png"></ion-img>
+        </ion-button>
+        <ion-button
+          fill="clear"
+          (click)="delete(i)"
+        >
+          <ion-img src="assets/icon/trash.png"></ion-img>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ng-container>
+</ion-list>

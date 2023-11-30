@@ -1,0 +1,22 @@
+<ion-header [translucent]="true" [class]="className">
+  <ion-toolbar>
+    <ng-container
+      [ngTemplateOutlet]="backBtn?.templateRef || defaultBackButton"
+    ></ng-container>
+    <ion-title [color]="color" [class.ion-text-center]="hasBackButton" class="font-md"> {{ title }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ng-template #defaultBackButton>
+  <ng-container *ngIf="hasBackButton">
+    <ion-buttons slot="start">
+      <ion-button
+        (click)="handleBackButtonClick()"
+        class="back-btn"
+        fill="clear"
+      >
+        <ion-icon name="chevron-back-outline" color="circle-black"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ng-container>
+</ng-template>

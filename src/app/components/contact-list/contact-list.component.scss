@@ -1,0 +1,29 @@
+ion-list {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+
+  ion-item {
+    --inner-padding-top: 16px;
+    --inner-padding-bottom: 8px;
+  }
+
+  ion-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+  }
+}
+
+ion-button {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+ion-buttons {
+  gap: 8px;
+}

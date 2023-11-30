@@ -4,6 +4,8 @@ import {CircledataService} from "../services/circledata.service";
 import {AlertController, LoadingController} from "@ionic/angular";
 import {WipeStatusEnum} from "../WipeStatusEnum";
 
+import { circles as circleData } from 'src/@fake-data/circle.data';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -11,7 +13,7 @@ import {WipeStatusEnum} from "../WipeStatusEnum";
 })
 export class HomePage {
 
-  public circles: Circle[] = [];
+  public circles: Circle[] = circleData;
 
   public addCircleModal = new Circle();
 
@@ -21,6 +23,7 @@ export class HomePage {
 
   public circleToken: string = "";
 
+  public backButton = true;
 
   constructor(public circleDataService: CircledataService,
               public alertController: AlertController,
@@ -37,10 +40,10 @@ export class HomePage {
    * This solution is fucking bad. Should be observable.
    */
   public async init() {
-      this.circles = await this.circleDataService.circles();
-      setInterval(async () => {
-        this.circles = await this.circleDataService.circles();
-      }, 2500);
+      // this.circles = await this.circleDataService.circles();
+      // setInterval(async () => {
+      //   this.circles = await this.circleDataService.circles();
+      // }, 2500);
   }
 
   public async addCircle() {
@@ -104,7 +107,9 @@ export class HomePage {
         }
 
       });
+  }
 
+  public handleOnBack() {
 
   }
 

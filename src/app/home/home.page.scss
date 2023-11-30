@@ -1,0 +1,75 @@
+.banner {
+  padding-left: 40px;
+  padding-right: 40px;
+
+  ion-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: fill;
+  }
+}
+
+.p-intro {
+  padding-bottom: 6px;
+}
+
+.text-small {
+  font-size: 13px;
+  line-height: 150%;
+  font-weight: 400;
+}
+
+.note-search {
+  display: flex;
+  padding: 12px 16px 12px 12px;
+  background: white;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #cacaca;
+
+  input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    line-height: 150%;
+    width: 100%;
+    color: var(--ion-color-circle-dark-grey);
+  }
+
+  ion-img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+}
+
+.px-c-1 {
+  --padding-start: var(--ion-padding, 8.5px);
+  --padding-end: var(--ion-padding, 8.5px);
+  padding-inline-start: var(--ion-padding, 8.5px);
+  padding-inline-end: var(--ion-padding, 8.5px);
+}
+
+.px-c-2 {
+  --padding-start: var(--ion-padding, 16px);
+  --padding-end: var(--ion-padding, 16px);
+  padding-inline-start: var(--ion-padding, 16px);
+  padding-inline-end: var(--ion-padding, 16px);
+}
+
+ion-modal {
+  ion-input {
+    border-radius: 8px;
+    border: 1px solid #cacaca;
+    --padding-start: 16px !important;
+    --padding-end: 16px;
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+  }
+
+  font-size: 14px;
+
+  .label {
+    margin-bottom: 9px;
+  }
+}

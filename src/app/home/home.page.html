@@ -1,30 +1,66 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Stellar Circle
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<circle-navbar
+  title="Circles"
+  color="circle-purple"
+  className="pb-6 {{circles.length == 0 ? 'pt-10 px-l-2' : 'pt-4 px-l-1'}}"
+>
+</circle-navbar>
 
-<ion-content [fullscreen]="true">
-  <div class="ion-padding">
-    <p>Circle allows you to wipe your friends phone. They must have Stellar Protect on their phone.</p>
-    <p>All contacts you add here is stored on your phone, and not on any server.</p>
-  </div>
+<ion-content [fullscreen]="true" class="{{circles.length == 0 ? 'px-c-2' : 'px-c-1'}}">
+  <ion-list lines="none">
+    <ion-item class="p-intro">
+      <p>
+        <ion-text color="circle-dark-grey text-small">
+          Circle allows you to wipe your friends phone. They must have Stellar
+          protect on their phone.
+        </ion-text>
+      </p>
+    </ion-item>
+    <ion-item>
+      <p>
+        <ion-text color="circle-dark-grey text-small">
+          All contacts you add here are stored on your phone, and not on any
+          server.
+        </ion-text>
+      </p>
+    </ion-item>
+  </ion-list>
 
-  <h4 class="ion-padding">Circles</h4>
+  <ion-grid class="pt-28" *ngIf="circles.length == 0">
+    <ion-row class="ion-justify-content-center banner mb-6">
+      <ion-img src="assets/images/circle-banner.svg"></ion-img>
+    </ion-row>
 
-  <p class="ion-padding" *ngIf="circles.length == 0">
-    You dont have any contacts added.
-    Click on the "+" icon to add a contact in Circles.
-  </p>
+    <ion-row>
+      <p>
+        <ion-text color="circle-black" class="text-small">
+          You don’t have any contacts added. Click on the “+” icon to add a
+          contact in Circles.
+        </ion-text>
+      </p>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item lines="none" class="pt-6" *ngIf="circles.length !== 0">
+    <div class="note-search">
+      <ion-img
+        name="search"
+        class="serach-icon"
+        src="assets/icon/search-lg.png"
+      ></ion-img>
+      <input placeholder="Search"/>
+    </div>
+  </ion-item>
 
   <!-- circles -->
-  <app-circles *ngFor="let circle of circles; index as i" [circle]="circle" [index]="i"></app-circles>
+  <contact-list [contacts]="circles" class="pt-4"></contact-list>
 
   <!-- add -->
-
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="modelToggleAdd()">
+  <ion-fab
+    slot="fixed"
+    vertical="bottom"
+    horizontal="end"
+    (click)="modelToggleAdd()"
+  >
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
@@ -33,48 +69,54 @@
   <!-- add modal -->
   <ion-modal [isOpen]="addCircleModelVisible">
     <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Add Contact</ion-title>
-          <ion-buttons slot="end" (click)="modelToggleAdd()">
-            <ion-button>Cancel</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
+      <circle-navbar
+        title="Add Contact"
+        color="circle-purple"
+        className="pt-10 px-l-2 pb-6"
+        [hasBackButton]="true"
+        (onClickBackButton)="modelToggleAdd()"
+      >
+      </circle-navbar>
       <ion-content class="ion-padding">
-        <p>
-          To add a Contact, please add a Nickname for your contact and their Wipe Token which they can see on <strong>Stellar Protect</strong> app.
+        <ion-row class="mb-8">
+          <p>
+            <ion-text color="circle-dark-grey" class="text-small">
+              To add a Contact, please add a Nickname for your contact and their
+              Wipe Token which they can see on
+              <ion-text color="circle-black" class="font-md"
+                >Stellar Protect</ion-text
+              >
+              app.
+            </ion-text>
+          </p>
+        </ion-row>
+
+        <ion-list lines="none">
+          <p class="label"><ion-text color="circle-black">Nickname</ion-text></p>
+          <ion-item class="mb-6">
+            <ion-input
+              placeholder="Enter a nickname"
+              color="circle-black"
+              [(ngModel)]="circleNameAdd"
+            ></ion-input>
+          </ion-item>
+          <p class="label"><ion-text color="circle-black">Wipe Auth Token</ion-text></p>
+          <ion-item class="mb-6">
+            <ion-input
+              placeholder="Wipe Auth Token"
+              color="circle-black"
+              [(ngModel)]="circleToken"
+            ></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <circle-button value="Add Contact" className="radius-2 font-md text-md" color="circle-green" (onClick)="addCircle()"></circle-button>
+        <p class="mt-6">
+          <ion-text color="circle-dark-grey">
+            * A contact is only stored on your phone, and not on any server.
+          </ion-text>
         </p>
-
-        <hr>
-
-        <ion-item>
-          <ion-input
-            label="Enter a nickname for your contact"
-            labelPlacement="stacked"
-            type="text"
-            placeholder="Enter a nickname for your contact"
-            [(ngModel)]="circleNameAdd"
-          ></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-input
-            label="Enter your contact Wipe Auth Token"
-            labelPlacement="stacked"
-            type="text"
-            placeholder="Enter your friends Wipe Auth Token"
-            [(ngModel)]="circleToken"
-          ></ion-input>
-        </ion-item><br>
-
-        <ion-button expand="block" (click)="addCircle()">Add Contact</ion-button>
-        <br><br>
-        * A contact is only stored on your phone, and not on any server.
-
       </ion-content>
     </ng-template>
   </ion-modal>
-
-
 </ion-content>
