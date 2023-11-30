@@ -9,10 +9,13 @@ ion-title {
   font-size: 20px;
   font-weight: 700;
   line-height: 150%;
+  position: relative;
 }
 
 ion-toolbar {
   --min-height: 0;
+  --background: transparent;
+  --border-style: none;
 }
 
 .header-primary {

@@ -3,7 +3,7 @@
     <ng-container
       [ngTemplateOutlet]="backBtn?.templateRef || defaultBackButton"
     ></ng-container>
-    <ion-title [color]="color" [class.ion-text-center]="hasBackButton" class="font-md"> {{ title }} </ion-title>
+    <ion-title [color]="color" [class.ion-text-start]="!hasBackButton" class="font-md"> {{ title }} </ion-title>
   </ion-toolbar>
 </ion-header>
 

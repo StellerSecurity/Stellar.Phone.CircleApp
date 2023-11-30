@@ -2,16 +2,28 @@ ion-list {
   background: transparent;
   display: flex;
   flex-direction: column;
+  background: white;
+  --background: white;
 
   ion-item {
     --inner-padding-top: 16px;
     --inner-padding-bottom: 8px;
+    background: white;
+    --background: white;
+    --border-color: #E5E7EB;
   }
 
   ion-title {
     font-size: 16px;
     font-weight: 500;
     line-height: 150%;
+    background: white;
+    --background: white;
+  }
+
+  ion-toolbar {
+    background: white;
+    --background: white;
   }
 }
 
