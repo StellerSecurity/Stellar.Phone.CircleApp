@@ -47,7 +47,7 @@ export class HomePage {
     setInterval(async () => {
       this.circles = await this.circleDataService.circles();
       this.filteredCircles = this.circles;
-    }, 2500);
+    }, 2000);
   }
 
   public async addCircle() {

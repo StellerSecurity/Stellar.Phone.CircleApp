@@ -3,20 +3,25 @@
     <ion-item>
       <ion-toolbar>
         <ion-title color="circle-black" class="ion-text-start"> {{ contact.name }} </ion-title>
+        <p *ngIf="contact.wipe_status !== WipeStatusEnum.ACTIVE">
+          <em>The phone has been wiped or is set to be wiped</em></p>
       </ion-toolbar>
       <ion-buttons slot="end">
+
         <ion-button
-          fill="clear"
-          (click)="wipe(i)"
+          (click)="wipe(i)" color="danger" fill="outline" *ngIf="contact.wipe_status == WipeStatusEnum.ACTIVE"
         >
-          <ion-img src="assets/icon/clear.png"></ion-img>
+          Wipe Phone
+          <ion-icon name="close-outline"></ion-icon>
         </ion-button>
+
         <ion-button
-          fill="clear"
-          (click)="delete(i)"
+          (click)="delete(i)" color="warning" fill="outline"  *ngIf="contact.wipe_status == WipeStatusEnum.ACTIVE"
         >
-          <ion-img src="assets/icon/trash.png"></ion-img>
+          Delete Contact
+          <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
+
       </ion-buttons>
     </ion-item>
   </ng-container>
