@@ -32,7 +32,6 @@ export class HomePage {
     private loadingCtrl: LoadingController,
   ) {
     this.addCircleModal.wipe_status = WipeStatusEnum.ACTIVE;
-    console.log('window.navigator.language', window.navigator.language);
     this.init().then((r) => { });
   }
 
