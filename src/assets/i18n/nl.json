@@ -1,0 +1,30 @@
+{
+  "circle_title": "Cirkels",
+  "circle_app_use": "Circle stelt je in staat om de telefoon van je vriend te wissen. Ze moeten Stellar Protect op hun telefoon hebben.",
+  "circle_app_description": "Alle contacten die je hier toevoegt, worden op je telefoon opgeslagen en niet op een server.",
+  "no_contacts_added_message": "Je hebt geen contacten toegevoegd. Klik op het "+"-pictogram om een contact toe te voegen in Cirkels.",
+  "search_placeholder": "Zoeken",
+  "add_contact_title": "Contact Toevoegen",
+  "add_contact_description": "Voeg een contact toe door een bijnaam en hun Wipe Token in te voeren, die ze kunnen zien in de Stellar Protect-app.",
+  "nickname_label": "Bijnaam",
+  "nickname_placeholder": "Voer een bijnaam in",
+  "wipe_token_label": "Wipe Auth Token",
+  "wipe_token_placeholder": "Wipe Auth Token invoeren",
+  "add_contact_button": "Contact Toevoegen",
+  "contact_storage_note": "Een contact wordt alleen op je telefoon opgeslagen, niet op een server.",
+
+  "wipe_confirmation_header": "Waarschuwing",
+  "wipe_confirmation_message": "Weet je zeker dat je de telefoon van {{ contactName }} wilt wissen?",
+  "cancel_button": "Annuleren",
+  "okay_button": "OK",
+  "please_wait_message": "Even geduld a.u.b....",
+  "wipe_set_header": "Wissen is ingesteld",
+  "wipe_set_message": "{{ contactName }} is ingesteld om te worden gewist. Let op: de telefoon moet online zijn voordat deze wordt gewist. Bovendien ontvangen we geen status als de telefoon is gewist of niet.",
+  "delete_confirmation_header": "Waarschuwing",
+  "delete_confirmation_message": "Weet je zeker dat je {{ contactName }} uit je contacten wilt verwijderen?",
+
+  "contact_name": "{{ name }}",
+  "phone_wipe_status_message": "De telefoon is gewist of ingesteld om te worden gewist",
+  "wipe_phone_button": "Telefoon Wissen",
+  "delete_button": "Verwijderen"
+}

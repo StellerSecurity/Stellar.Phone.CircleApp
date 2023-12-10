@@ -1,0 +1,30 @@
+{
+  "circle_title": "Círculos",
+  "circle_app_use": "Circle te permite borrar el teléfono de tu amigo. Deben tener Stellar Protect en su teléfono.",
+  "circle_app_description": "Todos los contactos que agregues aquí se almacenan en tu teléfono, y no en ningún servidor.",
+  "no_contacts_added_message": "No tienes ningún contacto agregado. Haz clic en el ícono '+' para agregar un contacto en Círculos.",
+  "search_placeholder": "Buscar",
+  "add_contact_title": "Agregar contacto",
+  "add_contact_description": "Para agregar un contacto, por favor agrega un apodo para tu contacto y su Token de Borrado que pueden ver en la aplicación Stellar Protect.",
+  "nickname_label": "Apodo",
+  "nickname_placeholder": "Ingresa un apodo",
+  "wipe_token_label": "Proteger Token de Autenticación de Borrado",
+  "wipe_token_placeholder": "Proteger Token de Autenticación de Borrado",
+  "add_contact_button": "Agregar contacto",
+  "contact_storage_note": "Un contacto se almacena solo en tu teléfono, y no en ningún servidor.",
+
+  "wipe_confirmation_header": "Advertencia",
+  "wipe_confirmation_message": "¿Estás seguro de que quieres borrar el teléfono de {{ contactName }}?",
+  "cancel_button": "Cancelar",
+  "okay_button": "Aceptar",
+  "please_wait_message": "Por favor espera...",
+  "wipe_set_header": "Borrado programado",
+  "wipe_set_message": "{{ contactName }} está programado para ser borrado. Aviso: el teléfono debe estar en línea antes de ser borrado, y además, no recibimos un estado si el teléfono ha sido borrado o no.",
+  "delete_confirmation_header": "Advertencia",
+  "delete_confirmation_message": "¿Estás seguro de que quieres eliminar a {{ contactName }} de tus contactos?",
+
+  "contact_name": "{{ name }}",
+  "phone_wipe_status_message": "El teléfono ha sido borrado o está programado para ser borrado",
+  "wipe_phone_button": "Borrar teléfono",
+  "delete_button": "Eliminar"
+}

@@ -1,0 +1,30 @@
+{
+  "circle_title": "Cirklar",
+  "circle_app_use": "Circle låter dig radera din väns telefon. De måste ha Stellar Protect på sin telefon.",
+  "circle_app_description": "Alla kontakter du lägger till här sparas på din telefon och inte på någon server.",
+  "no_contacts_added_message": "Du har inte lagt till några kontakter. Klicka på '+'-ikonen för att lägga till en kontakt i Cirklar.",
+  "search_placeholder": "Sök",
+  "add_contact_title": "Lägg till kontakt",
+  "add_contact_description": "För att lägga till en kontakt, lägg till ett smeknamn för din kontakt och deras Wipe Token som de kan se i Stellar Protect-appen.",
+  "nickname_label": "Smeknamn",
+  "nickname_placeholder": "Ange ett smeknamn",
+  "wipe_token_label": "Skydda Wipe Auth Token",
+  "wipe_token_placeholder": "Skydda Wipe Auth Token",
+  "add_contact_button": "Lägg till kontakt",
+  "contact_storage_note": "En kontakt sparas endast på din telefon och inte på någon server.",
+
+  "wipe_confirmation_header": "Varning",
+  "wipe_confirmation_message": "Är du säker på att du vill radera {{ contactName }}s telefon?",
+  "cancel_button": "Avbryt",
+  "okay_button": "Okej",
+  "please_wait_message": "Vänta...",
+  "wipe_set_header": "Radering är inställd",
+  "wipe_set_message": "{{ contactName }} är inställd att raderas. Observera: telefonen måste vara online innan den raderas - dessutom får vi ingen status om telefonen har raderats eller inte.",
+  "delete_confirmation_header": "Varning",
+  "delete_confirmation_message": "Är du säker på att du vill ta bort {{ contactName }} från dina kontakter?",
+
+  "contact_name": "{{ name }}",
+  "phone_wipe_status_message": "Telefonen har raderats eller är inställd att raderas",
+  "wipe_phone_button": "Radera telefon",
+  "delete_button": "Radera"
+}
