@@ -21,16 +21,16 @@ export class AppComponent implements AfterViewInit {
 
   setDefaultLanguage() {
     let getDefaultLanguage = window.navigator.language.substring(0, 2);
-
+    console.log("DefaultLanguage", getDefaultLanguage)
     // List of supported languages
-    const supportedLanguages = ['en', 'fr', 'da']; // Add your supported languages here.
+    const supportedLanguages = ['da', 'en', 'es', 'fr', 'nl', 'no', 'sv']; // Add your supported languages here.
 
     // Check if the detected language is supported.
     if (supportedLanguages.includes(getDefaultLanguage)) {
       this.translate.setDefaultLang(getDefaultLanguage);
     } else {
       // Fallback to English if the detected language is not supported.
-      this.translate.setDefaultLang('en-US');
+      this.translate.setDefaultLang('en');
     }
   }
 
