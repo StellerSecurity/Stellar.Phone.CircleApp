@@ -1,14 +1,14 @@
 import {
   Component,
-  OnChanges,
   Input,
   Output,
   EventEmitter,
 } from '@angular/core';
 import { Circle } from 'src/app/models/circle.model';
-import {AlertController, LoadingController} from "@ionic/angular";
+import { AlertController, LoadingController } from "@ionic/angular";
 import { CircledataService } from 'src/app/services/circledata.service';
 import { WipeStatusEnum } from 'src/app/WipeStatusEnum';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'contact-list',
@@ -17,22 +17,27 @@ import { WipeStatusEnum } from 'src/app/WipeStatusEnum';
 })
 export class ContactListComponent {
 
-  constructor(private alertController: AlertController, private loadingCtrl: LoadingController, private circleDataService: CircledataService) { }
+  constructor(
+    private alertController: AlertController,
+    private loadingCtrl: LoadingController,
+    private circleDataService: CircledataService,
+    private translate: TranslateService
+  ) { }
 
   @Input() contacts: Circle[] = [];
   @Output() onClear = new EventEmitter<any>();
   @Output() onRemove = new EventEmitter<any>();
   @Output() onClick = new EventEmitter<any>();
-  
+
   public async wipe(i: number) {
     const contact = this.contacts[i];
-    
+
     const alert = await this.alertController.create({
-      header: 'Warning',
-      message: 'Are you sure you want to Wipe ' + contact.name + ' phone?',
+      header: this.translate.instant('wipe_confirmation_header'),
+      message: this.translate.instant('wipe_confirmation_message', { contactName: contact.name }),
       buttons: [
         {
-          text: 'Cancel',
+          text: this.translate.instant('cancel_button'),
           role: 'cancel',
           cssClass: 'secondary',
           id: 'cancel-button',
@@ -40,12 +45,12 @@ export class ContactListComponent {
 
           }
         }, {
-          text: 'Okay',
+          text: this.translate.instant('okay_button'),
           id: 'confirm-button',
           handler: async () => {
 
             const loading = await this.loadingCtrl.create({
-              message: 'Please wait...'
+              message: this.translate.instant('please_wait_message')
             });
 
             await loading.present();
@@ -56,9 +61,9 @@ export class ContactListComponent {
                 await loading.dismiss();
 
                 const alert = await this.alertController.create({
-                  header: 'Wipe is set',
-                  message: contact.name + ' has been set to be wiped. Notice: the phone must be online before its get wiped -- also we dont recieve a status if the phone has been wiped or not.',
-                  buttons: ['OK'],
+                  header: this.translate.instant('wipe_set_header'),
+                  message: this.translate.instant('wipe_set_message', { contactName: contact.name }),
+                  buttons: [this.translate.instant('okay_button')],
                 });
 
                 await alert.present();
@@ -80,11 +85,11 @@ export class ContactListComponent {
   public async delete(i: number) {
     const contact = this.contacts[i];
     const alert = await this.alertController.create({
-      header: 'Warning',
-      message: 'Are you sure you want to remove ' + contact.name + ' from your contacts?',
+      header: this.translate.instant('delete_confirmation_header'),
+      message: this.translate.instant('delete_confirmation_message', { contactName: contact.name }),
       buttons: [
         {
-          text: 'Cancel',
+          text: this.translate.instant('cancel_button'),
           role: 'cancel',
           cssClass: 'secondary',
           id: 'cancel-button',
@@ -92,7 +97,7 @@ export class ContactListComponent {
 
           }
         }, {
-          text: 'Okay',
+          text: this.translate.instant('okay_button'),
           id: 'confirm-button',
           handler: () => {
             this.circleDataService.remove(i);

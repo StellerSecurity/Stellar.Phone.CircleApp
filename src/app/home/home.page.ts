@@ -29,10 +29,11 @@ export class HomePage {
   constructor(
     public circleDataService: CircledataService,
     public alertController: AlertController,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
   ) {
     this.addCircleModal.wipe_status = WipeStatusEnum.ACTIVE;
-    this.init().then((r) => {});
+    console.log('window.navigator.language', window.navigator.language);
+    this.init().then((r) => { });
   }
 
   public modelToggleAdd() {

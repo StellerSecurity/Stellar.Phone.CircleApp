@@ -1,0 +1,30 @@
+{
+  "circle_title": "Circles",
+  "circle_app_use": "Circle allows you to wipe your friend's phone. They must have Stellar Protect on their phone.",
+  "circle_app_description": "All contacts you add here are stored on your phone, and not on any server.",
+  "no_contacts_added_message": "You don’t have any contacts added. Click on the “+” icon to add a contact in Circles.",
+  "search_placeholder": "Search",
+  "add_contact_title": "Add Contact",
+  "add_contact_description": "To add a Contact, please add a Nickname for your contact and their Wipe Token which they can see on Stellar Protect app.",
+  "nickname_label": "Nickname",
+  "nickname_placeholder": "Enter a nickname",
+  "wipe_token_label": "Protect Wipe Auth Token",
+  "wipe_token_placeholder": "Protect Wipe Auth Token",
+  "add_contact_button": "Add Contact",
+  "contact_storage_note": "A contact is only stored on your phone, and not on any server.",
+
+  "wipe_confirmation_header": "Warning",
+  "wipe_confirmation_message": "Are you sure you want to Wipe {{ contactName }}'s phone?",
+  "cancel_button": "Cancel",
+  "okay_button": "Okay",
+  "please_wait_message": "Please wait...",
+  "wipe_set_header": "Wipe is set",
+  "wipe_set_message": "{{ contactName }} has been set to be wiped. Notice: the phone must be online before it gets wiped -- also, we don't receive a status if the phone has been wiped or not.",
+  "delete_confirmation_header": "Warning",
+  "delete_confirmation_message": "Are you sure you want to remove {{ contactName }} from your contacts?",
+
+  "contact_name": "{{ name }}",
+  "phone_wipe_status_message": "The phone has been wiped or is set to be wiped",
+  "wipe_phone_button": "Wipe Phone",
+  "delete_button": "Delete"
+}

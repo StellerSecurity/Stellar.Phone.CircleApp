@@ -2,26 +2,25 @@
   <ng-container *ngFor="let contact of contacts; index as i">
     <ion-item>
       <ion-toolbar>
-        <ion-title color="circle-black" class="ion-text-start"> {{ contact.name }} </ion-title>
+        <ion-title color="circle-black" class="ion-text-start">{{ 'contact_name' | translate: { name: contact.name } }}</ion-title>
         <p *ngIf="contact.wipe_status !== WipeStatusEnum.ACTIVE">
-          <em>The phone has been wiped or is set to be wiped</em></p>
+          <em>{{ 'phone_wipe_status_message' | translate }}</em>
+        </p>
       </ion-toolbar>
       <ion-buttons slot="end">
-
         <ion-button
           (click)="wipe(i)" color="danger" fill="outline" *ngIf="contact.wipe_status == WipeStatusEnum.ACTIVE"
         >
-          Wipe Phone
+          {{ 'wipe_phone_button' | translate }}
           <ion-icon name="close-outline"></ion-icon>
         </ion-button>
 
         <ion-button
-          (click)="delete(i)" color="warning" fill="outline"  *ngIf="contact.wipe_status == WipeStatusEnum.ACTIVE"
+          (click)="delete(i)" color="warning" fill="outline" *ngIf="contact.wipe_status == WipeStatusEnum.ACTIVE"
         >
-          Delete
+          {{ 'delete_button' | translate }}
           <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
-
       </ion-buttons>
     </ion-item>
   </ng-container>
