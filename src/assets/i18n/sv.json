@@ -8,8 +8,8 @@
   "add_contact_description": "För att lägga till en kontakt, lägg till ett smeknamn för din kontakt och deras Wipe Token som de kan se i Stellar Protect-appen.",
   "nickname_label": "Smeknamn",
   "nickname_placeholder": "Ange ett smeknamn",
-  "wipe_token_label": "Skydda Wipe Auth Token",
-  "wipe_token_placeholder": "Skydda Wipe Auth Token",
+  "wipe_token_label": "Protect Wipe Token",
+  "wipe_token_placeholder": "Protect Wipe Token",
   "add_contact_button": "Lägg till kontakt",
   "contact_storage_note": "En kontakt sparas endast på din telefon och inte på någon server.",
 

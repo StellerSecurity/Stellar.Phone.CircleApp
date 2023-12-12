@@ -8,8 +8,8 @@
   "add_contact_description": "For at tilføje en kontakt skal du tilføje et kaldenavn til din kontakt og deres Wipe Token, som de kan se på Stellar Protect-appen.",
   "nickname_label": "Kaldenavn",
   "nickname_placeholder": "Indtast et kaldenavn",
-  "wipe_token_label": "Beskyt Slet Autentificerings Token",
-  "wipe_token_placeholder": "Beskyt Slet Autentificerings Token",
+  "wipe_token_label": "Protect Wipe Token",
+  "wipe_token_placeholder": "Protect Wipe Token",
   "add_contact_button": "Tilføj Kontakt",
   "contact_storage_note": "En kontakt gemmes kun på din telefon og ikke på nogen server.",
 

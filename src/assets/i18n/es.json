@@ -8,8 +8,8 @@
   "add_contact_description": "Para agregar un contacto, por favor agrega un apodo para tu contacto y su Token de Borrado que pueden ver en la aplicación Stellar Protect.",
   "nickname_label": "Apodo",
   "nickname_placeholder": "Ingresa un apodo",
-  "wipe_token_label": "Proteger Token de Autenticación de Borrado",
-  "wipe_token_placeholder": "Proteger Token de Autenticación de Borrado",
+  "wipe_token_label": "Protect Wipe Token",
+  "wipe_token_placeholder": "Protect Wipe Token",
   "add_contact_button": "Agregar contacto",
   "contact_storage_note": "Un contacto se almacena solo en tu teléfono, y no en ningún servidor.",
 

@@ -8,8 +8,8 @@
   "add_contact_description": "Voeg een contact toe door een bijnaam en hun Wipe Token in te voeren, die ze kunnen zien in de Stellar Protect-app.",
   "nickname_label": "Bijnaam",
   "nickname_placeholder": "Voer een bijnaam in",
-  "wipe_token_label": "Wipe Auth Token",
-  "wipe_token_placeholder": "Wipe Auth Token invoeren",
+  "wipe_token_label": "Protect Wipe Token",
+  "wipe_token_placeholder": "Protect Wipe Token",
   "add_contact_button": "Contact Toevoegen",
   "contact_storage_note": "Een contact wordt alleen op je telefoon opgeslagen, niet op een server.",
 
