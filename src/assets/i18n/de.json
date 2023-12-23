@@ -1,0 +1,30 @@
+{
+  "circle_title": "Kreise",
+  "circle_app_use": "Circle ermöglicht es Ihnen, das Telefon Ihres Freundes zu löschen. Sie müssen Stellar Protect auf ihrem Telefon installiert haben.",
+  "circle_app_description": "Alle Kontakte, die Sie hier hinzufügen, werden auf Ihrem Telefon gespeichert und nicht auf einem Server.",
+  "no_contacts_added_message": "Sie haben keine Kontakte hinzugefügt. Klicken Sie auf das Symbol “+”, um einen Kontakt in Circles hinzuzufügen.",
+  "search_placeholder": "Suchen",
+  "add_contact_title": "Kontakt hinzufügen",
+  "add_contact_description": "Um einen Kontakt hinzuzufügen, fügen Sie bitte einen Spitznamen für Ihren Kontakt und deren Lösch-Token hinzu, den sie in der Stellar Protect-App sehen können.",
+  "nickname_label": "Spitzname",
+  "nickname_placeholder": "Geben Sie einen Spitznamen ein",
+  "wipe_token_label": "Schützen Sie das Lösch-Authentifizierungs-Token",
+  "wipe_token_placeholder": "Schützen Sie das Lösch-Authentifizierungs-Token",
+  "add_contact_button": "Kontakt hinzufügen",
+  "contact_storage_note": "Ein Kontakt wird nur auf Ihrem Telefon und nicht auf einem Server gespeichert.",
+
+  "wipe_confirmation_header": "Warnung",
+  "wipe_confirmation_message": "Sind Sie sicher, dass Sie das Telefon von {{ contactName }} löschen möchten?",
+  "cancel_button": "Abbrechen",
+  "okay_button": "Okay",
+  "please_wait_message": "Bitte warten...",
+  "wipe_set_header": "Löschung ist eingestellt",
+  "wipe_set_message": "{{ contactName }} wurde zur Löschung vorgesehen. Hinweis: Das Telefon muss online sein, bevor es gelöscht wird - außerdem erhalten wir keine Statusmeldung, ob das Telefon gelöscht wurde oder nicht.",
+  "delete_confirmation_header": "Warnung",
+  "delete_confirmation_message": "Sind Sie sicher, dass Sie {{ contactName }} aus Ihren Kontakten entfernen möchten?",
+
+  "contact_name": "{{ name }}",
+  "phone_wipe_status_message": "Das Telefon wurde gelöscht oder ist zur Löschung vorgesehen",
+  "wipe_phone_button": "Telefon löschen",
+  "delete_button": "Löschen"
+}

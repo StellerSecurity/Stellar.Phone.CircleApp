@@ -23,7 +23,7 @@ export class AppComponent implements AfterViewInit {
     let getDefaultLanguage = window.navigator.language.substring(0, 2);
     console.log("DefaultLanguage", getDefaultLanguage)
     // List of supported languages
-    const supportedLanguages = ['da', 'en', 'es', 'fr', 'nl', 'no', 'sv']; // Add your supported languages here.
+    const supportedLanguages = ['da', 'en', 'es', 'fr', 'nl', 'no', 'sv', 'de']; // Add your supported languages here.
 
     // Check if the detected language is supported.
     if (supportedLanguages.includes(getDefaultLanguage)) {
