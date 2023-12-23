@@ -40,14 +40,15 @@ export class HomePage {
   }
 
   /**
-   * This solution is fucking bad. Should be observable.
+   * This solution is fucking bad.
+   * Should be observable.
    */
   public async init() {
     this.circles = await this.circleDataService.circles();
     setInterval(async () => {
       this.circles = await this.circleDataService.circles();
       this.filteredCircles = this.circles;
-    }, 2000);
+    }, 1500);
   }
 
   public async addCircle() {
@@ -65,7 +66,7 @@ export class HomePage {
     if (this.circleToken.length == 0) {
       const alert = await this.alertController.create({
         header: 'Error',
-        message: 'Your contact must have a Wipe Token. It cannot be empty.',
+        message: 'Your contact must have a Wipe Token. It cannot be empty. It can be found in the Protect-app.',
         buttons: ['OK'],
       });
 
