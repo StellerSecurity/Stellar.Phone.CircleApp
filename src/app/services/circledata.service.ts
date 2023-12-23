@@ -14,6 +14,10 @@ export class CircledataService {
 
   constructor(private storage: Storage, private http: HttpClient) { }
 
+  /**
+   * Checks if the wipe-token exists in DB, to ensure its valid.
+   * @param circle
+   */
   public async circleTokenCheck(circle: Circle) {
 
     const httpOptions = {
