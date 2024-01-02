@@ -5,6 +5,10 @@
         <ion-title color="circle-black" class="ion-text-start">{{ 'contact_name' | translate: { name: contact.name } }}</ion-title>
         <p *ngIf="contact.wipe_status !== WipeStatusEnum.ACTIVE">
           <em>{{ 'phone_wipe_status_message' | translate }}</em>
+          <ion-button (click)="delete(i)" color="warning" fill="outline">
+            {{ 'delete_button' | translate }}
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
         </p>
       </ion-toolbar>
       <ion-buttons slot="end">
@@ -15,9 +19,7 @@
           <ion-icon name="close-outline"></ion-icon>
         </ion-button>
 
-        <ion-button
-          (click)="delete(i)" color="warning" fill="outline" *ngIf="contact.wipe_status == WipeStatusEnum.ACTIVE"
-        >
+        <ion-button (click)="delete(i)" color="warning" fill="outline" *ngIf="contact.wipe_status == WipeStatusEnum.ACTIVE">
           {{ 'delete_button' | translate }}
           <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
