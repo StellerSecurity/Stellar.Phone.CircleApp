@@ -1,0 +1,24 @@
+
+.tiltle{
+  color: black;
+  font-size: 18px;
+}
+
+ion-toolbar {
+  --border-width: 0;
+  --background: #F6F6FD;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+
+}
+.text-heading{
+  display: block;
+  font-size: 16px;
+}
+ion-card {
+  box-shadow: none !important;
+  border-radius: 25px;
+  --background: #FFFFFF;
+}

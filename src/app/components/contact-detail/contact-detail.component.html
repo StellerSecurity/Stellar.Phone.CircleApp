@@ -1,0 +1,76 @@
+
+
+
+<ion-content scrollY="false" [fullscreen]="true"  class="px-c-2">
+  <ion-toolbar class="pb-6 pt-4">
+    
+    <ion-buttons slot="start" (click)="goBack()">
+        <img  src="/assets/icon/left-arrow.svg" class="back">
+        
+    </ion-buttons>
+    <ion-title class="tiltle px-l-2 ion-align-items-center ion-justify-content-start">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="auto">
+          <ion-img  src="/assets/icon/user-thumb.svg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-label class="ion-text-center px-l-1">{{contactDetail.name}}</ion-label>
+        </ion-col>
+      </ion-row>
+      
+      
+    </ion-title>
+    <ion-buttons slot="end" (click)="delete()">
+     <img src="/assets/icon/trash-gray.svg">
+      
+    </ion-buttons>
+    <!--<ion-title [color]="color" [class.ion-text-start]="!hasBackButton" class="font-md"> {{ title }} </ion-title>-->
+  </ion-toolbar>
+  <ion-list lines="none" *ngIf="false">
+    <ion-item class="p-intro">
+      <p>
+        <ion-text color="circle-dark-grey text-small">
+          {{ 'circle_app_use' | translate }}
+        </ion-text>
+      </p>
+    </ion-item>
+    <ion-item>
+      <p>
+        <ion-text color="circle-dark-grey text-small">
+          {{ 'circle_app_description' | translate }}
+        </ion-text>
+      </p>
+    </ion-item>
+  </ion-list>
+
+  <div class="add-container" >
+    <div class="mid-container">
+      
+      <ion-row class="m-simple">
+        <ion-card mode="ios" class="ion-no-border">
+          <ion-card-content class="ion-text-center">
+            <img src="/assets/icon/wipe-icon.svg" class="logo">
+            <p class="pt-4 pb-4 ion-text-left">
+              <ion-text color="circle-black"  class="text-heading font-semi-bold pb-4">{{'wipe_phone_button' | translate}}
+
+              </ion-text>
+              <ion-text color="circle-dark-grey text-small text-color">
+                <span [innerHtml]="'wipe_info_detail' | translate"></span>
+              </ion-text>
+            </p>
+            <circle-button *ngIf="contactDetail.wipe_status == WipeStatusEnum.ACTIVE" value="{{ 'wipe_this_phone_button' | translate }}" className="font-md text-md "
+          color="circle-danger" (click)="wipe()"></circle-button>
+          </ion-card-content>
+          
+        </ion-card>
+
+      </ion-row>
+    </div>
+  </div>
+ 
+
+
+
+
+  <!-- <div align="center"><img src="/assets/images/logo.svg" class="stellar-logo"></div> -->
+</ion-content>

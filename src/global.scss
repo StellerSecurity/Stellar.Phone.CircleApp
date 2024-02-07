@@ -34,6 +34,14 @@
   padding: 0;
 }
 
+ion-content,
+ion-list,
+ion-item,
+input {
+  --background: #F6F6FD;
+  background: #F6F6FD;
+}
+
 ion-item {
   --inner-padding-end: 0;
   --padding-start: 0;
@@ -46,7 +54,19 @@ ion-img {
   --padding-start: 0;
   --padding-end: 0;
 }
+.px-c-1 {
+  --padding-start: var(--ion-padding, 8.5px);
+  --padding-end: var(--ion-padding, 8.5px);
+  padding-inline-start: var(--ion-padding, 8.5px);
+  padding-inline-end: var(--ion-padding, 8.5px);
+}
 
+.px-c-2 {
+  --padding-start: var(--ion-padding, 16px);
+  --padding-end: var(--ion-padding, 16px);
+  padding-inline-start: var(--ion-padding, 16px);
+  padding-inline-end: var(--ion-padding, 16px);
+}
 .list-md {
   padding-top: 0;
   padding-bottom: 0;
@@ -65,6 +85,9 @@ ion-img {
 
 .pt-4 {
   padding-top: 16px;
+}
+.pb-4 {
+  padding-bottom: 16px;
 }
 
 .pt-6 {

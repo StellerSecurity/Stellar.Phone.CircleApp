@@ -27,5 +27,7 @@
   "contact_name": "{{ name }}",
   "phone_wipe_status_message": "The phone has been wiped or is set to be wiped",
   "wipe_phone_button": "Wipe Phone",
+  "wipe_this_phone_button": "Wipe This Phone",
+  "wipe_info_detail":"This action will permanently erase all data on this device, including apps, photos, videos, contacts, and documents. <span class=\"font-bold\">Once wiped, this data cannot be recovered.</span>",
   "delete_button": "Delete"
 }

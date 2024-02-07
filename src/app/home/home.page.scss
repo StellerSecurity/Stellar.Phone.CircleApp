@@ -1,11 +1,11 @@
+
 ion-content,
 ion-list,
 ion-item,
 input {
-  --background: #f6f6fd;
-  background: #f6f6fd;
+  --background: #F6F6FD;
+  background: #F6F6FD;
 }
-
 .pt-20 {
   padding-top: 20px !important;
 }
@@ -55,19 +55,7 @@ input {
   }
 }
 
-.px-c-1 {
-  --padding-start: var(--ion-padding, 8.5px);
-  --padding-end: var(--ion-padding, 8.5px);
-  padding-inline-start: var(--ion-padding, 8.5px);
-  padding-inline-end: var(--ion-padding, 8.5px);
-}
 
-.px-c-2 {
-  --padding-start: var(--ion-padding, 16px);
-  --padding-end: var(--ion-padding, 16px);
-  padding-inline-start: var(--ion-padding, 16px);
-  padding-inline-end: var(--ion-padding, 16px);
-}
 
 ion-modal {
   ion-input {
