@@ -1,17 +1,20 @@
 <ion-list lines="inset">
-  <ng-container *ngFor="let contact of contacts; index as i">
-    <ion-item>
-      <ion-toolbar>
-        <ion-title color="circle-black" class="ion-text-start">{{ 'contact_name' | translate: { name: contact.name } }}</ion-title>
+  <ng-container *ngFor="let contact of contacts; index as i" class="contact-list mb-4">
+    <ion-item class="px-l-2 mt-4">
+      <ion-toolbar class="d-flex">
+        <img slot="start" src="/assets/icon/user-icon.svg" class="user" alt="user">
+        <ion-title  color="circle-black" class="font-semi-bold px-l-1 ion-text-start ion-text-center ion-align-items-center">{{ 'contact_name' | translate: { name: contact.name } }}</ion-title>
         <p *ngIf="contact.wipe_status !== WipeStatusEnum.ACTIVE">
+          
           <em>{{ 'phone_wipe_status_message' | translate }}</em>
-          <ion-button (click)="delete(i)" color="warning" fill="outline">
+          <!-- <ion-button (click)="delete(i)" color="warning" fill="outline">
             {{ 'delete_button' | translate }}
             <ion-icon name="trash-outline"></ion-icon>
-          </ion-button>
+          </ion-button> -->
         </p>
+        <img slot="end" src="/assets/icon/right-arrow.svg" class="user" alt="user">
       </ion-toolbar>
-      <ion-buttons slot="end">
+      <!-- <ion-buttons slot="end">
         <ion-button
           (click)="wipe(i)" color="danger" fill="outline" *ngIf="contact.wipe_status == WipeStatusEnum.ACTIVE"
         >
@@ -23,7 +26,15 @@
           {{ 'delete_button' | translate }}
           <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
-      </ion-buttons>
+      </ion-buttons> -->
     </ion-item>
   </ng-container>
+  <div style="display: flex; align-items: center;" *ngIf="contacts.length > 0" class="mt-4">
+    <img src="/assets/images/icon-set.svg" class="set-logo">
+    <p class="px-l-2 font-12">
+      <ion-text color="circle-dark-grey" class="ion-align-items-center">
+        {{ 'contact_storage_note' | translate }}
+      </ion-text>
+    </p>
+  </div>
 </ion-list>
