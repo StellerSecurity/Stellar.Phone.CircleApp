@@ -30,7 +30,7 @@ export class ContactDetailComponent  implements OnInit {
 id:any
 contactDetail : any = []
 originalData:Circle[] = []
-  async loadComponentData(){debugger
+  async loadComponentData(){
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     
    this.originalData = await this.circleDataService.circles();
@@ -48,8 +48,17 @@ public async wipe() {
   const contact = this.originalData[this.id];
 
   const alert = await this.alertController.create({
-    header: this.translate.instant('wipe_confirmation_header'),
-    message: this.translate.instant('wipe_confirmation_message', { contactName: contact.name }),
+    cssClass: "wipe-out-alert alert-with-icon",
+    header: this.translate.instant('wipe_alert_header',{ contactName: contact.name }),
+    message: `${this.translate.instant('wipe_confirmation_message')}`,
+    inputs: [
+      {
+        name: 'username',
+        type: 'text',
+        placeholder: 'Enter Username',
+        cssClass:'alert-input'
+      }
+    ],
     buttons: [
       {
         text: this.translate.instant('cancel_button'),
@@ -60,8 +69,9 @@ public async wipe() {
 
         }
       }, {
-        text: this.translate.instant('okay_button'),
+        text: this.translate.instant('wipe_phone_button'),
         id: 'confirm-button',
+        cssClass: 'danger',
         handler: async () => {
 
           const loading = await this.loadingCtrl.create({
@@ -76,9 +86,10 @@ public async wipe() {
               await loading.dismiss();
 
               const alert = await this.alertController.create({
-                header: this.translate.instant('wipe_set_header'),
-                message: this.translate.instant('wipe_set_message', { contactName: contact.name }),
-                buttons: [this.translate.instant('okay_button')],
+                cssClass: "wipe-out-set alert-with-icon",
+                header: this.translate.instant('wipe_set_header',{ contactName: contact.name }),
+                message: this.translate.instant('wipe_set_message'),
+                buttons: [this.translate.instant('close_button')],
               });
 
               await alert.present();
@@ -101,7 +112,8 @@ public async delete() {
   const contact = this.originalData[this.id];
   const alert = await this.alertController.create({
     header: this.translate.instant('delete_confirmation_header'),
-    message: this.translate.instant('delete_confirmation_message', { contactName: contact.name }),
+    message:  this.translate.instant('delete_confirmation_message', { contactName: contact.name })                              ,
+    cssClass: 'custom-alert',
     buttons: [
       {
         text: this.translate.instant('cancel_button'),
@@ -119,6 +131,7 @@ public async delete() {
           this.goBack()
         }
       }
+      
     ]
   });
 

@@ -15,18 +15,20 @@
   "contact_storage_note": "All contacts you add here are stored on your phone, and not on any server.",
 
   "wipe_confirmation_header": "Warning",
-  "wipe_confirmation_message": "Are you sure you want to Wipe {{ contactName }}'s phone?",
+  "wipe_confirmation_message": "All Data will be deleted from phone. Input Contact name to confirm it.",
   "cancel_button": "Cancel",
   "okay_button": "Okay",
+  "close_button": "Close",
   "please_wait_message": "Please wait...",
-  "wipe_set_header": "Wipe is set",
-  "wipe_set_message": "{{ contactName }} has been set to be wiped. Notice: the phone must be online before it gets wiped -- also, we don't receive a status if the phone has been wiped or not.",
+  "wipe_set_header": "{{ contactName }}'s Phone Set to Wiped",
+  "wipe_set_message": "The phone must be online before it gets wiped also, we don't receive a status if the phone has been wiped or not.",
   "delete_confirmation_header": "Warning",
   "delete_confirmation_message": "Are you sure you want to remove {{ contactName }} from your contacts?",
 
   "contact_name": "{{ name }}",
   "phone_wipe_status_message": "The phone has been wiped or is set to be wiped",
   "wipe_phone_button": "Wipe Phone",
+  "wipe_alert_header":"Wipe {{ contactName }}'s Phone",
   "wipe_this_phone_button": "Wipe This Phone",
   "wipe_info_detail":"This action will permanently erase all data on this device, including apps, photos, videos, contacts, and documents. <span class=\"font-bold\">Once wiped, this data cannot be recovered.</span>",
   "delete_button": "Delete"
