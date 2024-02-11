@@ -259,6 +259,11 @@ ion-img {
     }
   }
 }
+.error-alert{
+  h2,.alert-message{
+    color: #E10000 !important;
+  }
+}
 .text-left{
   text-align: left;
 }

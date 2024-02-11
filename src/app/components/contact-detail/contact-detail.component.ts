@@ -56,7 +56,8 @@ public async wipe() {
         name: 'username',
         type: 'text',
         placeholder: 'Enter Username',
-        cssClass:'alert-input'
+        cssClass:'alert-input',
+        value: '',
       }
     ],
     buttons: [
@@ -72,34 +73,52 @@ public async wipe() {
         text: this.translate.instant('wipe_phone_button'),
         id: 'confirm-button',
         cssClass: 'danger',
-        handler: async () => {
-
-          const loading = await this.loadingCtrl.create({
-            message: this.translate.instant('please_wait_message')
-          });
-
-          await loading.present();
-
-          (await this.circleDataService.wipe(contact))
-            .subscribe(async response => {
-
-              await loading.dismiss();
-
-              const alert = await this.alertController.create({
-                cssClass: "wipe-out-set alert-with-icon",
-                header: this.translate.instant('wipe_set_header',{ contactName: contact.name }),
-                message: this.translate.instant('wipe_set_message'),
-                buttons: [this.translate.instant('close_button')],
-              });
-
-              await alert.present();
-
-              contact.wipe_status = WipeStatusEnum.WIPING;
-
-              await this.circleDataService.update(this.id, contact);
-              this.loadComponentData()
-
+        handler: async (data) => {
+          const username = data.username.trim();
+          if(username){
+            const loading = await this.loadingCtrl.create({
+              message: this.translate.instant('please_wait_message')
             });
+  
+            await loading.present();
+  
+            (await this.circleDataService.wipe(contact))
+              .subscribe(async response => {
+  
+                await loading.dismiss();
+  
+                const alert = await this.alertController.create({
+                  cssClass: "wipe-out-set alert-with-icon",
+                  header: this.translate.instant('wipe_set_header',{ contactName: contact.name }),
+                  message: this.translate.instant('wipe_set_message'),
+                  buttons: [this.translate.instant('close_button')],
+                });
+  
+                await alert.present();
+  
+                contact.wipe_status = WipeStatusEnum.WIPING;
+  
+                await this.circleDataService.update(this.id, contact);
+                this.loadComponentData()
+  
+              });
+              return true
+          }
+         else{
+          const errorAlert = await this.alertController.create({
+            header: 'Error',
+            message: 'Please enter a username',
+            cssClass:'error-alert',
+            buttons: [{
+              text: 'OK',
+              handler: () => {
+                // Do not dismiss the alert
+              }
+            }]
+          });
+          await errorAlert.present();
+          return false
+         }
 
         }
       }
