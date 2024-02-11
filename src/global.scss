@@ -47,7 +47,6 @@ ion-item {
   --padding-start: 0;
   --min-height: 0;
 }
-
 ion-img {
   --padding-top: 0;
   --padding-bottom: 0;
@@ -62,10 +61,10 @@ ion-img {
 }
 
 .px-c-2 {
-  --padding-start: var(--ion-padding, 16px);
-  --padding-end: var(--ion-padding, 16px);
-  padding-inline-start: var(--ion-padding, 16px);
-  padding-inline-end: var(--ion-padding, 16px);
+  --padding-start: var(--ion-padding, 20px);
+  --padding-end: var(--ion-padding, 20px);
+  padding-inline-start: var(--ion-padding, 20px);
+  padding-inline-end: var(--ion-padding, 20px);
 }
 .list-md {
   padding-top: 0;
@@ -157,6 +156,7 @@ ion-img {
 .d-flex{
   display: flex;
 }
+
 .font-12{
   font-size: 12px;
 }
@@ -166,6 +166,7 @@ ion-img {
   border-radius: 24px !important;
   min-width: 318px;
   text-align: center;
+  padding: 16px 8px;
   
   .alert-head{
     h2{
@@ -178,6 +179,7 @@ ion-img {
   .alert-message{
     font-size: 14px;
     color: #62626A;
+    padding-bottom: 8px;
   }
   .alert-input-group{
     padding-top: 8px;
@@ -197,9 +199,10 @@ ion-img {
       width: calc(100% - 44px);
   }
   }
-  .alert-button.sc-ion-alert-md{
+  .alert-button{
     text-transform: capitalize;
     font-weight: 600;
+    font-size: 14px;
   }
   .alert-button.danger{
     color: #E10000;
@@ -255,6 +258,9 @@ ion-img {
       background-image: url('/assets/icon/set-wipe-icon.svg');
     }
   }
+}
+.text-left{
+  text-align: left;
 }
 ion-backdrop.sc-ion-alert-md.md.hydrated {
   opacity: 0.5 !important;

@@ -24,7 +24,9 @@ input {
 .p-intro {
   padding-bottom: 6px;
 }
-
+.mid-text{
+  padding-top: 4px;
+}
 .text-small {
   font-size: 14px;
   line-height: 150%;
@@ -114,8 +116,8 @@ ion-modal {
   font-style: normal;
   margin: 0;
   padding: 0;
-  font-weight: 500;
-  font-size: 23px;
+  font-weight: 400;
+  font-size: 18px;
   line-height: 27px;
   color: #0B0C19;
 }

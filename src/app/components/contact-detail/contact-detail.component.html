@@ -8,7 +8,7 @@
         <img  src="/assets/icon/left-arrow.svg" class="back">
         
     </ion-buttons>
-    <ion-title class="tiltle px-l-2 ion-align-items-center ion-justify-content-start">
+    <ion-title  class="tiltle text-left px-l-2 ion-align-items-center ion-justify-content-start">
       <ion-row class="ion-align-items-center">
         <ion-col size="auto">
           <ion-img  src="/assets/icon/user-thumb.svg"></ion-img>
@@ -58,7 +58,7 @@
                 <span [innerHtml]="'wipe_info_detail' | translate"></span>
               </ion-text>
             </p>
-            <circle-button *ngIf="contactDetail.wipe_status == WipeStatusEnum.ACTIVE" value="{{ 'wipe_this_phone_button' | translate }}" className="font-md text-md "
+            <circle-button *ngIf="contactDetail.wipe_status == WipeStatusEnum.ACTIVE" value="{{ 'wipe_this_phone_button' | translate }}" className="font-semi-bold"
           color="circle-danger" (click)="wipe()"></circle-button>
           </ion-card-content>
           

@@ -27,7 +27,7 @@
       <ion-row>
         <p>
           <ion-text color="circle-black text-small no_contact_text">
-            <span class="font-semi-bold">{{'no_contacts_added_message_bold' | translate}}</span>
+            <span class="font-semi-bold text-md">{{'no_contacts_added_message_bold' | translate}}</span>
             <span class="mid-text" [innerHTML]="'no_contacts_added_message' | translate"></span>
           </ion-text>
         </p>
@@ -55,7 +55,7 @@
     <ng-template>
   
       <ion-header [translucent]="true" mode="ios" class="ion-no-border">
-        <ion-toolbar style="background: white;" class="ion-no-border">
+        <ion-toolbar style="background: #F6F6FD;" class="ion-no-border">
           <ion-buttons slot="start">
             <ion-button (click)="modelToggleAdd()" class="back-btn" fill="clear">
               <ion-icon name="close-outline" class="cross-btn"></ion-icon>
@@ -95,7 +95,7 @@
   
         </ion-list>
   
-        <circle-button value="{{ 'add_contact_button' | translate }}" className="radius-2 font-md text-md"
+        <circle-button value="{{ 'add_contact_button' | translate }}" className="radius-2 font-semi-bold"
           color="circle-blue" (onClick)="addCircle()"></circle-button>
         <div style="display: flex;">
           <img src="/assets/images/icon-set.svg" class="set-logo">

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.popin-font,.popin-font *{
+    font-family: 'Poppins', sans-serif !important;
+}
+ion-toolbar {
+    --border-width: 0;
+    --background: #F6F6FD;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+  
+  }
+  ion-list {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+  }
+  ion-item {
+    --inner-padding-top: 6px;
+    --inner-padding-bottom: 6px;
+    background: white;
+    --background: white;
+    --border-color: transparent;
+  }
+  ion-card{
+    --background: #FFFFFF;
+    border-radius:24px;
+    padding: 20px 24px;
+    text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 4px 16px !important;
+    .ion-card-header{
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.5;
+        color: #0B0C19;
+    }
+    .ion-card-content{
+        padding: 0;
+      }
+  }
+  
+  ion-text{
+    display: block;
+  }
+  .text-center{
+    text-align: center;
+  }
+  .main-color{
+    color: #0B0C19;
+  }
+ 
+  .info-main-title{
+    color: #0B0C19;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .info-desc{
+    color: #62626A;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .app-info-img{
+    position: relative;
+    .bottom-blur{
+        position: absolute;
+        width: 100vw;
+        background: linear-gradient(to bottom, rgba(246, 246, 253, 0), rgba(246, 246, 253, 1));
+        height: 226px;
+        bottom: 0;
+        left: 0;
+    }
+  }
+  .wipe-items{
+    .wipe-text{
+        font-size: 14px;
+        padding-bottom: 8px;
+        display: flex;
+        align-items: center;
+        .count{
+            width: 25px;
+            min-width: 25px;
+            height: 25px;
+            background-color: #2761FC;
+            border-radius: 50px;
+            margin-right: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+    }
+  }
+  .mt-9{
+    margin-top: 40px;
+  }
+  .mb-9{
+    margin-bottom: 40px;
+  }
+  .pb-2{
+    padding-bottom: 8px;
+  }

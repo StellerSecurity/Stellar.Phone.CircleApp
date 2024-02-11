@@ -31,5 +31,14 @@
   "wipe_alert_header":"Wipe {{ contactName }}'s Phone",
   "wipe_this_phone_button": "Wipe This Phone",
   "wipe_info_detail":"This action will permanently erase all data on this device, including apps, photos, videos, contacts, and documents. <span class=\"font-bold\">Once wiped, this data cannot be recovered.</span>",
-  "delete_button": "Delete"
+  "delete_button": "Delete",
+  "info_main_heading":"Wipe and secure your friend’s phone",
+  "info_main_description":"Circle allows you to wipe your friend's phone. They must have Stellar Protect on their phone.",
+  "info_add_contact_title":"All contacts you add here are stored on your phone.",
+  "info_add_contact_desc":"and not on any server",
+  "info_wipe_phone_title":"How to wipe phone?",
+  "info_wipe_item_one_text":"Add contact using protect Wipe Auth Token",
+  "info_wipe_item_two_text":"Select contact from list",
+  "info_wipe_item_three_text":"Wipe Phone!",
+  "info_brought_by_stellar":"Brought to you completely free by"
 }
