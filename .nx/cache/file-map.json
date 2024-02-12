@@ -1,0 +1,722 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.1.2",
+  "deps": {
+    "@angular/animations": "^17.0.2",
+    "@angular/common": "^17.0.2",
+    "@angular/compiler": "^17.0.2",
+    "@angular/core": "^17.0.2",
+    "@angular/forms": "^17.0.2",
+    "@angular/platform-browser": "^17.0.2",
+    "@angular/platform-browser-dynamic": "^17.0.2",
+    "@angular/router": "^17.0.2",
+    "@capacitor/android": "5.5.1",
+    "@capacitor/app": "5.0.6",
+    "@capacitor/core": "5.5.1",
+    "@capacitor/haptics": "5.0.6",
+    "@capacitor/keyboard": "5.0.6",
+    "@capacitor/status-bar": "5.0.6",
+    "@ionic/angular": "^7.0.0",
+    "@ionic/storage": "^4.0.0",
+    "@ionic/storage-angular": "^4.0.0",
+    "ionicons": "^7.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.2",
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular-eslint/builder": "^17.0.0",
+    "@angular-eslint/eslint-plugin": "^17.0.0",
+    "@angular-eslint/eslint-plugin-template": "^17.0.0",
+    "@angular-eslint/schematics": "^17.0.0",
+    "@angular-eslint/template-parser": "^17.0.0",
+    "@angular/cli": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.2",
+    "@angular/language-service": "^17.0.2",
+    "@capacitor/assets": "^3.0.1",
+    "@capacitor/cli": "5.5.1",
+    "@ionic/angular-toolkit": "^9.0.0",
+    "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsdoc": "30.7.6",
+    "eslint-plugin-prefer-arrow": "1.2.2",
+    "jasmine-core": "~5.1.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "ts-node": "^8.3.0",
+    "typescript": "~5.2.2"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".browserslistrc",
+        "hash": "7979060078399394427"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "6686520031028425313"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "18210278994710539225"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "12014291823188966514"
+      },
+      {
+        "file": ".nx/cache/file-map.json",
+        "hash": "7564011772384343393"
+      },
+      {
+        "file": ".nx/cache/lockfile.hash",
+        "hash": "2436510817487422687"
+      },
+      {
+        "file": ".nx/cache/parsed-lock-file.json",
+        "hash": "5629178351368567759"
+      },
+      {
+        "file": ".nx/cache/project-graph.json",
+        "hash": "6882317606317755275"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "592272277800690021"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "1151538777131426085"
+      },
+      {
+        "file": "README.md",
+        "hash": "2723106475195832422"
+      },
+      {
+        "file": "android/.gitignore",
+        "hash": "16088808965373471785"
+      },
+      {
+        "file": "android/app/.gitignore",
+        "hash": "3800628318224317187"
+      },
+      {
+        "file": "android/app/build.gradle",
+        "hash": "5395225337701046872"
+      },
+      {
+        "file": "android/app/capacitor.build.gradle",
+        "hash": "321577693221425197"
+      },
+      {
+        "file": "android/app/proguard-rules.pro",
+        "hash": "16319704539319765030"
+      },
+      {
+        "file": "android/app/src/androidTest/java/com/getcapacitor/myapp/ExampleInstrumentedTest.java",
+        "hash": "1280125089554780403"
+      },
+      {
+        "file": "android/app/src/main/AndroidManifest.xml",
+        "hash": "4230276635809428227"
+      },
+      {
+        "file": "android/app/src/main/java/stellar/circle/app/MainActivity.java",
+        "hash": "12519240858116691333"
+      },
+      {
+        "file": "android/app/src/main/res/drawable/ic_launcher_background.xml",
+        "hash": "4055909962711590499"
+      },
+      {
+        "file": "android/app/src/main/res/drawable/splash.png",
+        "hash": "13354102016025079206"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-land-hdpi/splash.png",
+        "hash": "12618218220193540786"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-land-mdpi/splash.png",
+        "hash": "13354102016025079206"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-land-xhdpi/splash.png",
+        "hash": "16928120350772912315"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-land-xxhdpi/splash.png",
+        "hash": "8114284271146720243"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-land-xxxhdpi/splash.png",
+        "hash": "10648225290896133372"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-port-hdpi/splash.png",
+        "hash": "7870574596552345396"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-port-mdpi/splash.png",
+        "hash": "512985810174291431"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-port-xhdpi/splash.png",
+        "hash": "13168839858812363171"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-port-xxhdpi/splash.png",
+        "hash": "1546567578093946022"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-port-xxxhdpi/splash.png",
+        "hash": "7224188242308859997"
+      },
+      {
+        "file": "android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml",
+        "hash": "16602625396055746895"
+      },
+      {
+        "file": "android/app/src/main/res/layout/activity_main.xml",
+        "hash": "13540211242698942768"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+        "hash": "4016059711077230768"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+        "hash": "4016059711077230768"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+        "hash": "6786573427070611052"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-hdpi/ic_launcher_background.png",
+        "hash": "15142477384157670303"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png",
+        "hash": "15142477384157670303"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+        "hash": "1625340892041943564"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-ldpi/ic_launcher.png",
+        "hash": "6273163258790689311"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-ldpi/ic_launcher_background.png",
+        "hash": "5513236065615495602"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-ldpi/ic_launcher_foreground.png",
+        "hash": "5513236065615495602"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-ldpi/ic_launcher_round.png",
+        "hash": "3287055898176847587"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+        "hash": "7152858952500743896"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-mdpi/ic_launcher_background.png",
+        "hash": "15318779489690969521"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
+        "hash": "15318779489690969521"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+        "hash": "136102148005513846"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+        "hash": "5039888345655359508"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png",
+        "hash": "14086290867920004431"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png",
+        "hash": "14086290867920004431"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+        "hash": "5799200882739825214"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+        "hash": "9889472015687769824"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png",
+        "hash": "17968824561037248485"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+        "hash": "17968824561037248485"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+        "hash": "12467376712607123606"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "hash": "18312637651155845793"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png",
+        "hash": "2960819731053808119"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+        "hash": "2960819731053808119"
+      },
+      {
+        "file": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+        "hash": "9022772972888517650"
+      },
+      {
+        "file": "android/app/src/main/res/values/ic_launcher_background.xml",
+        "hash": "9482601953118464086"
+      },
+      {
+        "file": "android/app/src/main/res/values/strings.xml",
+        "hash": "10350012642027083942"
+      },
+      {
+        "file": "android/app/src/main/res/values/styles.xml",
+        "hash": "17918612613785874663"
+      },
+      {
+        "file": "android/app/src/main/res/xml/file_paths.xml",
+        "hash": "14753087816109454837"
+      },
+      {
+        "file": "android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java",
+        "hash": "11856600006954306230"
+      },
+      {
+        "file": "android/build.gradle",
+        "hash": "15247024166514751308"
+      },
+      {
+        "file": "android/capacitor.settings.gradle",
+        "hash": "14622451423594914531"
+      },
+      {
+        "file": "android/gradle/wrapper/gradle-wrapper.jar",
+        "hash": "13643854122011606232"
+      },
+      {
+        "file": "android/gradle/wrapper/gradle-wrapper.properties",
+        "hash": "10340632815092109200"
+      },
+      {
+        "file": "android/gradle.properties",
+        "hash": "2024862945433011340"
+      },
+      {
+        "file": "android/gradlew",
+        "hash": "9896656627243825026"
+      },
+      {
+        "file": "android/gradlew.bat",
+        "hash": "8837338129170646035"
+      },
+      {
+        "file": "android/settings.gradle",
+        "hash": "426215723856156424"
+      },
+      {
+        "file": "android/variables.gradle",
+        "hash": "9467210284462474397"
+      },
+      {
+        "file": "angular.json",
+        "hash": "12609113634043900485"
+      },
+      {
+        "file": "capacitor.config.ts",
+        "hash": "7411747900455045832"
+      },
+      {
+        "file": "icons/icon-128.webp",
+        "hash": "1038272004922118831"
+      },
+      {
+        "file": "icons/icon-192.webp",
+        "hash": "2960819731053808119"
+      },
+      {
+        "file": "icons/icon-256.webp",
+        "hash": "15002369161673160914"
+      },
+      {
+        "file": "icons/icon-48.webp",
+        "hash": "15318779489690969521"
+      },
+      {
+        "file": "icons/icon-512.webp",
+        "hash": "111189235063629682"
+      },
+      {
+        "file": "icons/icon-72.webp",
+        "hash": "15142477384157670303"
+      },
+      {
+        "file": "icons/icon-96.webp",
+        "hash": "14086290867920004431"
+      },
+      {
+        "file": "ionic.config.json",
+        "hash": "10215623707309790513"
+      },
+      {
+        "file": "ionic.starter.json",
+        "hash": "1908762056767145156"
+      },
+      {
+        "file": "karma.conf.js",
+        "hash": "14545024387909073831"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "13496860460112699525"
+      },
+      {
+        "file": "package.json",
+        "hash": "8677128446657245812"
+      },
+      {
+        "file": "resources/icon-background.png",
+        "hash": "1264152706218178394"
+      },
+      {
+        "file": "resources/icon-foreground.png",
+        "hash": "1264152706218178394"
+      },
+      {
+        "file": "resources/icon-only.png",
+        "hash": "1264152706218178394"
+      },
+      {
+        "file": "src/app/WipeStatusEnum.ts",
+        "hash": "8661066228143383667"
+      },
+      {
+        "file": "src/app/app-routing.module.ts",
+        "hash": "14802986321943831615"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "12139992690072916112"
+      },
+      {
+        "file": "src/app/app.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/app.component.spec.ts",
+        "hash": "16655258543879266906"
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "14734166384493358554"
+      },
+      {
+        "file": "src/app/app.module.ts",
+        "hash": "2066952706803160097"
+      },
+      {
+        "file": "src/app/circles/circles.component.html",
+        "hash": "7687629274782875390"
+      },
+      {
+        "file": "src/app/circles/circles.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/circles/circles.component.spec.ts",
+        "hash": "4360651757672797454"
+      },
+      {
+        "file": "src/app/circles/circles.component.ts",
+        "hash": "5101906105756153569"
+      },
+      {
+        "file": "src/app/components/button/button.component.html",
+        "hash": "17486156799524932281"
+      },
+      {
+        "file": "src/app/components/button/button.component.scss",
+        "hash": "5584004249808533367"
+      },
+      {
+        "file": "src/app/components/button/button.component.spec.ts",
+        "hash": "4434417760919432439"
+      },
+      {
+        "file": "src/app/components/button/button.component.ts",
+        "hash": "5790807152326305433"
+      },
+      {
+        "file": "src/app/components/components.module.ts",
+        "hash": "5589072460996885457"
+      },
+      {
+        "file": "src/app/components/contact-list/contact-list.component.html",
+        "hash": "9684096702419182715"
+      },
+      {
+        "file": "src/app/components/contact-list/contact-list.component.scss",
+        "hash": "9999547821188964783"
+      },
+      {
+        "file": "src/app/components/contact-list/contact-list.component.ts",
+        "hash": "4218658100324582749"
+      },
+      {
+        "file": "src/app/components/navbar/directives/navbar-back-btn.directive.ts",
+        "hash": "14667980960946872546"
+      },
+      {
+        "file": "src/app/components/navbar/navbar.component.html",
+        "hash": "18033708399884513957"
+      },
+      {
+        "file": "src/app/components/navbar/navbar.component.scss",
+        "hash": "4130698358806870214"
+      },
+      {
+        "file": "src/app/components/navbar/navbar.component.spec.ts",
+        "hash": "3245826898615318468"
+      },
+      {
+        "file": "src/app/components/navbar/navbar.component.ts",
+        "hash": "10089304639452396243"
+      },
+      {
+        "file": "src/app/components/navbar/navbar.module.ts",
+        "hash": "7853387385532883843"
+      },
+      {
+        "file": "src/app/home/home-routing.module.ts",
+        "hash": "10197262553865492585"
+      },
+      {
+        "file": "src/app/home/home.module.ts",
+        "hash": "15183612689484578349"
+      },
+      {
+        "file": "src/app/home/home.page.html",
+        "hash": "2967564544931901592"
+      },
+      {
+        "file": "src/app/home/home.page.scss",
+        "hash": "5469474480868085149"
+      },
+      {
+        "file": "src/app/home/home.page.spec.ts",
+        "hash": "9873538466096745735"
+      },
+      {
+        "file": "src/app/home/home.page.ts",
+        "hash": "10292133760297044615"
+      },
+      {
+        "file": "src/app/models/circle.model.spec.ts",
+        "hash": "11568277872082562549"
+      },
+      {
+        "file": "src/app/models/circle.model.ts",
+        "hash": "8709929310156433030"
+      },
+      {
+        "file": "src/app/services/circledata.service.spec.ts",
+        "hash": "55676941639950466"
+      },
+      {
+        "file": "src/app/services/circledata.service.ts",
+        "hash": "11949284356503177370"
+      },
+      {
+        "file": "src/app/types/color.ts",
+        "hash": "17313670461307900960"
+      },
+      {
+        "file": "src/app/types/index.ts",
+        "hash": "1124378753958259070"
+      },
+      {
+        "file": "src/assets/fonts/silka/generator_config.txt",
+        "hash": "13227787045503036270"
+      },
+      {
+        "file": "src/assets/fonts/silka/silka-regular-webfont.eot",
+        "hash": "3303001405481716336"
+      },
+      {
+        "file": "src/assets/fonts/silka/silka-regular-webfont.ttf",
+        "hash": "15309095044113055828"
+      },
+      {
+        "file": "src/assets/fonts/silka/silka-regular-webfont.woff",
+        "hash": "4267484549128574577"
+      },
+      {
+        "file": "src/assets/fonts/silka/silka-regular-webfont.woff2",
+        "hash": "2637724330828312173"
+      },
+      {
+        "file": "src/assets/fonts/silka/silka-regularitalic-webfont.eot",
+        "hash": "14991329509579888870"
+      },
+      {
+        "file": "src/assets/fonts/silka/silka-regularitalic-webfont.ttf",
+        "hash": "6982172511861481237"
+      },
+      {
+        "file": "src/assets/fonts/silka/silka-regularitalic-webfont.woff",
+        "hash": "10752276082246295230"
+      },
+      {
+        "file": "src/assets/fonts/silka/silka-regularitalic-webfont.woff2",
+        "hash": "3173426644484808462"
+      },
+      {
+        "file": "src/assets/fonts/silka/specimen_files/grid_12-825-55-15.css",
+        "hash": "2611982776355452072"
+      },
+      {
+        "file": "src/assets/fonts/silka/specimen_files/specimen_stylesheet.css",
+        "hash": "14090600679222316886"
+      },
+      {
+        "file": "src/assets/fonts/silka/stylesheet.css",
+        "hash": "7278660417169069361"
+      },
+      {
+        "file": "src/assets/icon/clear-outline.png",
+        "hash": "18141600450183914976"
+      },
+      {
+        "file": "src/assets/icon/clear-outline.svg",
+        "hash": "14562175000893947959"
+      },
+      {
+        "file": "src/assets/icon/clear.png",
+        "hash": "281953251151006838"
+      },
+      {
+        "file": "src/assets/icon/clear.svg",
+        "hash": "5452492661021621663"
+      },
+      {
+        "file": "src/assets/icon/favicon.png",
+        "hash": "17482944836898362639"
+      },
+      {
+        "file": "src/assets/icon/search-lg.png",
+        "hash": "17930851208190055219"
+      },
+      {
+        "file": "src/assets/icon/trash-outline.png",
+        "hash": "2553943262068896876"
+      },
+      {
+        "file": "src/assets/icon/trash-outline.svg",
+        "hash": "7048397984403007348"
+      },
+      {
+        "file": "src/assets/icon/trash.png",
+        "hash": "4957047843445047351"
+      },
+      {
+        "file": "src/assets/icon/trash.svg",
+        "hash": "16359502718282936096"
+      },
+      {
+        "file": "src/assets/images/circle-banner.svg",
+        "hash": "8789436379282944716"
+      },
+      {
+        "file": "src/assets/shapes.svg",
+        "hash": "4708889011185296100"
+      },
+      {
+        "file": "src/assets/styles/ion-colors.scss",
+        "hash": "5995790845307785293"
+      },
+      {
+        "file": "src/environments/environment.prod.ts",
+        "hash": "4513772073439797245"
+      },
+      {
+        "file": "src/environments/environment.ts",
+        "hash": "15199825239313568080"
+      },
+      {
+        "file": "src/global.scss",
+        "hash": "7863450195397304636"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "5962093970713772175"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "3447864527603543144"
+      },
+      {
+        "file": "src/manifest.webmanifest",
+        "hash": "85529942384150453"
+      },
+      {
+        "file": "src/polyfills.ts",
+        "hash": "16163444994210036896"
+      },
+      {
+        "file": "src/test.ts",
+        "hash": "12412031923219697029"
+      },
+      {
+        "file": "src/theme/variables.scss",
+        "hash": "10683809365950317113"
+      },
+      {
+        "file": "src/zone-flags.ts",
+        "hash": "3323586086306676158"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "9041030522571917449"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "9300148005582941852"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "17198424518534092990"
+      }
+    ]
+  }
+}
