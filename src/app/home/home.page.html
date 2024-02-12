@@ -1,7 +1,18 @@
-<circle-navbar title="{{ 'circle_title' | translate }}" color="circle-purple"
+<circle-navbar *ngIf="!isSearch" (isSearchShown)="showSearch($event)" title="{{ 'circle_title' | translate }}" color="circle-purple"
   className="pb-6 {{circles.length == 0 ? 'pt-10 px-l-2' : 'pt-4 px-l-2'}}">
 </circle-navbar>
-
+<ion-item *ngIf="isSearch" lines="none" >
+  <div class="note-search pt-4  pb-6  px-l-2">
+    <ion-buttons slot="start" (click)="isSearch = false">
+      <img  src="/assets/icon/left-arrow.svg" class="back">
+    </ion-buttons>
+    <input class="px-l-2" placeholder="{{ 'search_placeholder' | translate }}" [(ngModel)]="search" (keyup)="handleSearch()" />
+    <ion-buttons slot="end" (click)="clearSearch()">
+      <ion-img name="Search" class="serach-icon" src="assets/icon/cross.svg"></ion-img>
+    </ion-buttons>
+    
+  </div>
+</ion-item>
 
 <ion-content scrollY="false" [fullscreen]="true" class="px-c-2">
   <ion-list lines="none" *ngIf="false">
@@ -35,12 +46,7 @@
     </div>
   </div>
 
-  <!-- <ion-item lines="none" class="pt-6" *ngIf="circles.length !== 0">
-    <div class="note-search">
-      <ion-img name="search" class="serach-icon" src="assets/icon/search-lg.png"></ion-img>
-      <input placeholder="{{ 'search_placeholder' | translate }}" [(ngModel)]="search" (change)="handleSearch()" />
-    </div>
-  </ion-item> -->
+  
 
   <!-- circles -->
   <contact-list [contacts]="filteredCircles" class="pt-4"></contact-list>

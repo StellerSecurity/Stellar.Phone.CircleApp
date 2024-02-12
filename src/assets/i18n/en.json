@@ -4,7 +4,7 @@
   "circle_app_description": "All contacts you add here are stored on your phone, and not on any server.",
   "no_contacts_added_message_bold":"You don’t added any contact",
   "no_contacts_added_message": "Tap on the <span class=\"blue-text font-bold\"> + button</span> to add contact.",
-  "search_placeholder": "Search",
+  "search_placeholder": "Search Contact",
   "add_contact_title": "Add Contact",
   "add_contact_description": "To add a Contact, please add a <span class=\"font-bold\">Nickname</span> for your contact and their <span class=\"font-bold\">Wipe Token</span> which they can see on Stellar Protect app.",
   "nickname_label": "Nickname",

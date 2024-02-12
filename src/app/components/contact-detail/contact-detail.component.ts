@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit,Output } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Circle } from 'src/app/models/circle.model';
 import { CircledataService } from 'src/app/services/circledata.service';
@@ -14,12 +14,12 @@ import { WipeStatusEnum } from 'src/app/WipeStatusEnum';
 })
 export class ContactDetailComponent  implements OnInit {
   routerNavigation:any
+  @Output() DataFromChild = new EventEmitter<Circle[]>();
   constructor(private activatedRoute: ActivatedRoute, private router: Router,public circleDataService: CircledataService,private _location: Location,private alertController: AlertController,private translate: TranslateService, private loadingCtrl: LoadingController,) {
   
    }
 
   ngOnInit() {
-    // this.loadComponentData()
     this.routerNavigation = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         // Handle route change here
@@ -35,8 +35,8 @@ originalData:Circle[] = []
     
    this.originalData = await this.circleDataService.circles();
    let circles =  this.originalData.map((item, index) => ({ ...item, id: index }));
-  this.contactDetail = circles.filter((item:Circle) => item.id == this.id)[0]
-   console.log('iddddd=>',this.id)
+  this.contactDetail = circles.filter((item:Circle) => item.id == this.id)[0];
+  this.DataFromChild.emit(this.originalData);
   
   }
 goBack(){
@@ -147,7 +147,8 @@ public async delete() {
         id: 'confirm-button',
         handler: () => {
           this.circleDataService.remove(this.id);
-          this.goBack()
+          
+          this.router.navigate(['/home']);
         }
       }
       
