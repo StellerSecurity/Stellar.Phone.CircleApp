@@ -1,0 +1,94 @@
+<ion-content scrollY="true" [fullscreen]="true"  class="px-c-2 text-center popin-font">
+  <ion-toolbar class="pb-6 pt-4">
+    
+    <ion-buttons slot="start" (click)="goBack()">
+        <img  src="/assets/icon/left-arrow.svg" class="back">
+    </ion-buttons>
+    <!--<ion-title [color]="color" [class.ion-text-start]="!hasBackButton" class="font-md"> {{ title }} </ion-title>-->
+  </ion-toolbar>
+  <div class="m-simple ion-align-items-center ion-justify-content-center" style="display: flex">
+    <ion-buttons slot="center">
+      <img width="32px" src="/assets/images/LogoIcon.svg" class="logo">
+  </ion-buttons>
+  <ion-text slot="center" class="tiltle main-color px-l-1 font-semi-bold">Stellar Circles</ion-text>
+  </div>
+  <ion-text class="info-main-title text-center pt-6">
+    {{'info_main_heading' | translate}}
+  </ion-text>
+  <ion-text class="pt-4 info-desc">
+    {{'info_main_description' | translate}}
+  </ion-text>
+  <div class="pt-6 app-info-img">
+    <ion-img src="/assets/images/app-info.svg"></ion-img>
+    <div class="bottom-blur"></div>
+  </div>
+  <ion-card mode="ios" class="ion-no-border mt-9">
+    <ion-card-header class="ion-card-header">{{'info_add_contact_title' | translate}}</ion-card-header>
+    <ion-card-content class="ion-text-center ion-card-content">
+      <p class="pt-4 pb-4">
+        <ion-text color="circle-black"  class="ion-text-left">{{'info_add_contact_desc' | translate}}
+        </ion-text>
+      </p>
+      
+    </ion-card-content>
+    
+  </ion-card>
+  <ion-card mode="ios" class="ion-no-border mt-9">
+    <ion-card-header class="ion-card-header">{{'info_wipe_phone_title' | translate}}</ion-card-header>
+    <ion-card-content class="ion-text-center ion-card-content">
+      <ion-list llines="inset">
+        <ion-item class="p-intro wipe-items pt-6">
+          <div class="row" style="width: 100%;">
+            <div class="col">
+              <ion-text class="wipe-text main-color">
+                <span class="count">1</span>
+                {{ 'info_wipe_item_one_text' | translate }}
+              </ion-text>
+            </div>
+            <div class="col">
+              <ion-img src="/assets/images/wipe-item-1.svg"></ion-img>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item class="p-intro wipe-items pt-6">
+          <div class="row" style="width: 100%;">
+            <div class="col">
+              <ion-text class="wipe-text main-color">
+                <span class="count">2</span>
+                {{ 'info_wipe_item_two_text' | translate }}
+              </ion-text>
+            </div>
+            <div class="col">
+              <ion-img src="/assets/images/wipe-item-2.svg"></ion-img>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item class="p-intro wipe-items pt-6">
+          <div class="row" style="width: 100%;">
+            <div class="col">
+              <ion-text class="wipe-text main-color">
+                <span class="count">3</span>
+                {{ 'info_wipe_item_three_text' | translate }}
+              </ion-text>
+            </div>
+            <div class="col">
+              <ion-img src="/assets/images/wipe-item-3.svg"></ion-img>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+      
+    </ion-card-content>
+    
+  </ion-card>
+  <ion-card mode="ios" class="ion-no-border mt-9 mb-9">
+    <ion-card-content class="ion-text-center ion-card-content">
+      <p class="pb-2">
+        <ion-text color="circle-black">{{'info_brought_by_stellar' | translate}}
+        </ion-text>
+      </p>
+      <img width="156" src="/assets/images/logo-inside.svg" class="set-logo">
+    </ion-card-content>
+    
+  </ion-card>
+</ion-content>

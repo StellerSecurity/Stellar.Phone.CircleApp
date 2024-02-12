@@ -1,0 +1,31 @@
+
+.tiltle{
+  color: black;
+  font-size: 18px;
+}
+
+ion-toolbar {
+  --border-width: 0;
+  --background: #F6F6FD;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+
+}
+.text-heading{
+  display: block;
+  font-size: 16px;
+}
+ion-card {
+  box-shadow: none !important;
+  border-radius: 25px;
+  --background: #FFFFFF;
+}
+  ion-input.cutom-input{color: #000 ; 
+    --background: #EAEAF0; 
+    background: #EAEAF0; 
+    --border-radius: 60px;
+    border: 0px solid #cacaca; 
+    min-height: 61px;}
+

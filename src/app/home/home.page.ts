@@ -1,15 +1,16 @@
-import { Component, inject } from '@angular/core';
+import { Component, SimpleChanges, inject } from '@angular/core';
 import { Circle } from '../models/circle.model';
 import { CircledataService } from '../services/circledata.service';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { WipeStatusEnum } from '../WipeStatusEnum';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage  {
   public circles: Circle[] = [];
 
   public addCircleModal = new Circle();
@@ -25,14 +26,22 @@ export class HomePage {
   public search: string = '';
 
   public filteredCircles: Circle[] = [];
-
+  routerNavigation:any
   constructor(
     public circleDataService: CircledataService,
     public alertController: AlertController,
     private loadingCtrl: LoadingController,
+    private router: Router
   ) {
     this.addCircleModal.wipe_status = WipeStatusEnum.ACTIVE;
     this.init().then((r) => { });
+
+    this.routerNavigation = this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Handle route change here
+        this.init().then((r) => { });
+      }
+    });
   }
 
   public modelToggleAdd() {
@@ -43,12 +52,17 @@ export class HomePage {
    * This solution is fucking bad.
    * Should be observable.
    */
+
   public async init() {
     this.circles = await this.circleDataService.circles();
-    setInterval(async () => {
+    setTimeout(async () => {
       this.circles = await this.circleDataService.circles();
       this.filteredCircles = this.circles;
-    }, 1500);
+    }, 1000);
+  }
+  isSearch:boolean = false
+  showSearch(searchStatus:boolean){
+    this.isSearch = searchStatus
   }
 
   public async addCircle() {
@@ -104,6 +118,8 @@ export class HomePage {
         this.circleToken = '';
 
         await this.circleDataService.add(this.addCircleModal);
+        this.init().then((r) => { });
+        
         this.modelToggleAdd();
         return;
       }
@@ -112,7 +128,16 @@ export class HomePage {
 
   public handleSearch() {
     this.filteredCircles = this.circles.filter((circle: Circle) => {
-      return circle.name.toLowerCase().includes(this.search.toLowerCase());
+      return circle.name.toLowerCase().includes(this.search.toLowerCase().trim());
     });
+  }
+ public clearSearch(){
+  this.search = ''
+  this.filteredCircles = this.circles.filter((circle: Circle) => {
+    return circle.name.toLowerCase();
+  });
+  }
+  ngOnDestroy(): void{
+    this.routerNavigation.unsubscribe();
   }
 }

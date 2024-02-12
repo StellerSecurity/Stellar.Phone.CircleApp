@@ -10,6 +10,7 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -19,6 +20,7 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     ButtonComponent,
     ContactListComponent,
+    ContactDetailComponent
   ],
   imports: [
     CommonModule,

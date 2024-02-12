@@ -2,20 +2,21 @@ ion-list {
   background: transparent;
   display: flex;
   flex-direction: column;
-  background: white;
-  --background: white;
 
   ion-item {
-    --inner-padding-top: 16px;
-    --inner-padding-bottom: 8px;
+    --inner-padding-top: 6px;
+    --inner-padding-bottom: 6px;
     background: white;
     --background: white;
-    --border-color: #E5E7EB;
+    --border-color: transparent;
+    --border-radius:16px;
+    border-radius: 16px;
+    
   }
 
   ion-title {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600 !important;
     line-height: 150%;
     background: white;
     --background: white;
@@ -24,13 +25,16 @@ ion-list {
   ion-toolbar {
     background: white;
     --background: white;
+    display: flex;
   }
 }
 
 ion-button {
 
 }
-
+.ion-text-start{
+  flex: 1;
+}
 ion-buttons {
   gap: 8px;
 }

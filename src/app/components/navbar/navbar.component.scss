@@ -2,14 +2,19 @@ ion-header {
   box-shadow: none;
   // padding: 14px 16px;
   // --background: #4264fa;
-  background: white;
+  background: #F6F6FD;
+  position: static;
 }
 
 ion-title {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 150%;
-  position: relative;
+    font-size: 14px;
+    color: #0B0C19;
+    font-family: Silka;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 0.76rem;
 }
 
 ion-toolbar {
@@ -38,4 +43,9 @@ ion-toolbar {
   ion-img {
     width: 20px;
   }
+}
+
+.header-icon {
+  color: #62626A;
+  font-size: 24px;
 }

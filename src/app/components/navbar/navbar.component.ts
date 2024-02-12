@@ -16,6 +16,7 @@ export class NavbarComponent {
   @Input() hasBackButton: boolean = false;
 
   @Output() onClickBackButton: EventEmitter<null> = new EventEmitter<null>();
+  @Output() isSearchShown: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @ContentChild(NavbarBackBtn) backBtn?: NavbarBackBtn;
 
@@ -23,5 +24,8 @@ export class NavbarComponent {
 
   handleBackButtonClick() {
     this.onClickBackButton.emit();
+  }
+  showSearch(){
+    this.isSearchShown.emit(true)
   }
 }

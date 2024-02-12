@@ -3,7 +3,14 @@
     <ng-container
       [ngTemplateOutlet]="backBtn?.templateRef || defaultBackButton"
     ></ng-container>
-    <img src="/assets/images/circle-logo.svg" class="logo">
+    <ion-buttons slot="start">
+        <img width="32px" src="/assets/images/LogoIcon.svg" class="logo">
+    </ion-buttons>
+    <ion-title slot="start" class="tiltle">Stellar Circles</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="showSearch()"><ion-icon class="header-icon" name="search-outline"></ion-icon></ion-button>
+      <ion-button fill="clear" routerLink='/info'><ion-icon class="header-icon" name="information-circle-outline"></ion-icon></ion-button>
+    </ion-buttons>
     <!--<ion-title [color]="color" [class.ion-text-start]="!hasBackButton" class="font-md"> {{ title }} </ion-title>-->
   </ion-toolbar>
 </ion-header>
