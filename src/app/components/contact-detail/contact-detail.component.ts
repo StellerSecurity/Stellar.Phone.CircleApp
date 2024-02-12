@@ -16,7 +16,7 @@ export class ContactDetailComponent  implements OnInit {
   routerNavigation:any
   @Output() DataFromChild = new EventEmitter<Circle[]>();
   constructor(private activatedRoute: ActivatedRoute, private router: Router,public circleDataService: CircledataService,private _location: Location,private alertController: AlertController,private translate: TranslateService, private loadingCtrl: LoadingController,) {
-  
+
    }
 
   ngOnInit() {
@@ -32,12 +32,12 @@ contactDetail : any = []
 originalData:Circle[] = []
   async loadComponentData(){
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    
+
    this.originalData = await this.circleDataService.circles();
    let circles =  this.originalData.map((item, index) => ({ ...item, id: index }));
   this.contactDetail = circles.filter((item:Circle) => item.id == this.id)[0];
   this.DataFromChild.emit(this.originalData);
-  
+
   }
 goBack(){
   this._location.back();
@@ -55,7 +55,7 @@ public async wipe() {
       {
         name: 'username',
         type: 'text',
-        placeholder: 'Enter Username',
+        placeholder: 'Enter Name To Verify Wipe',
         cssClass:'alert-input',
         value: '',
       }
@@ -79,28 +79,28 @@ public async wipe() {
             const loading = await this.loadingCtrl.create({
               message: this.translate.instant('please_wait_message')
             });
-  
+
             await loading.present();
-  
+
             (await this.circleDataService.wipe(contact))
               .subscribe(async response => {
-  
+
                 await loading.dismiss();
-  
+
                 const alert = await this.alertController.create({
                   cssClass: "wipe-out-set alert-with-icon",
                   header: this.translate.instant('wipe_set_header',{ contactName: contact.name }),
                   message: this.translate.instant('wipe_set_message'),
                   buttons: [this.translate.instant('close_button')],
                 });
-  
+
                 await alert.present();
-  
+
                 contact.wipe_status = WipeStatusEnum.WIPING;
-  
+
                 await this.circleDataService.update(this.id, contact);
                 this.loadComponentData()
-  
+
               });
               return true
           }
@@ -147,11 +147,11 @@ public async delete() {
         id: 'confirm-button',
         handler: () => {
           this.circleDataService.remove(this.id);
-          
+
           this.router.navigate(['/home']);
         }
       }
-      
+
     ]
   });
 
