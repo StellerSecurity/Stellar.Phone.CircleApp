@@ -118,7 +118,7 @@ export class HomePage  {
         this.circleToken = '';
 
         await this.circleDataService.add(this.addCircleModal);
-        this.filteredCircles = await this.circleDataService.circles();
+        this.init().then((r) => { });
         
         this.modelToggleAdd();
         return;
