@@ -119,7 +119,7 @@ export class HomePage  {
 
         await this.circleDataService.add(this.addCircleModal);
         this.init().then((r) => { });
-        
+
         this.modelToggleAdd();
         return;
       }
@@ -131,7 +131,12 @@ export class HomePage  {
       return circle.name.toLowerCase().includes(this.search.toLowerCase().trim());
     });
   }
- public clearSearch(){
+ public clearSearch(stopSearching: boolean){
+
+  if(stopSearching) {
+    this.isSearch = false;
+  }
+
   this.search = ''
   this.filteredCircles = this.circles.filter((circle: Circle) => {
     return circle.name.toLowerCase();

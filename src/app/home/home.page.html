@@ -3,14 +3,14 @@
 </circle-navbar>
 <ion-item *ngIf="isSearch" lines="none" >
   <div class="note-search pt-4  pb-6  px-l-2">
-    <ion-buttons slot="start" (click)="isSearch = false">
+    <ion-buttons slot="start" (click)=" clearSearch(true)">
       <img  src="/assets/icon/left-arrow.svg" class="back">
     </ion-buttons>
     <input class="px-l-2" placeholder="{{ 'search_placeholder' | translate }}" [(ngModel)]="search" (keyup)="handleSearch()" />
-    <ion-buttons slot="end" (click)="clearSearch()">
+    <ion-buttons slot="end" (click)="clearSearch(false)">
       <ion-img name="Search" class="serach-icon" src="assets/icon/cross.svg"></ion-img>
     </ion-buttons>
-    
+
   </div>
 </ion-item>
 
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  
+
 
   <!-- circles -->
   <contact-list [contacts]="filteredCircles" class="pt-4"></contact-list>
@@ -59,7 +59,7 @@
   <!-- add modal -->
   <ion-modal [isOpen]="addCircleModelVisible">
     <ng-template>
-  
+
       <ion-header [translucent]="true" mode="ios" class="ion-no-border">
         <ion-toolbar style="background: #F6F6FD;" class="ion-no-border">
           <ion-buttons slot="start">
@@ -83,24 +83,24 @@
               </p>
             </ion-card-content>
           </ion-card>
-  
+
         </ion-row>
-  
+
         <ion-list lines="none" class="m-simple">
-  
+
           <ion-input no-border label="{{ 'nickname_label' | translate }}" label-placement="floating" fill="solid"
             [(ngModel)]="circleNameAdd" style="color: #000 ; --background: #EAEAF0; --border-radius: 60px;
             border: 0px solid #cacaca; min-height: 61px;" placeholder="{{ 'nickname_label' | translate }}"
             mode="ios"></ion-input>
-  
-  
+
+
           <ion-input label="{{ 'wipe_token_label' | translate }}" label-placement="floating" fill="solid"
             [(ngModel)]="circleToken" style="color: #000; --background: #EAEAF0; --border-radius: 60px;
             border: 0px solid #cacaca; min-height: 61px;" placeholder="{{ 'wipe_token_placeholder' | translate }}"
             mode="ios"></ion-input>
-  
+
         </ion-list>
-  
+
         <circle-button value="{{ 'add_contact_button' | translate }}" className="radius-2 font-semi-bold"
           color="circle-blue" (onClick)="addCircle()"></circle-button>
         <div style="display: flex;">
@@ -111,8 +111,8 @@
             </ion-text>
           </p>
         </div>
-  
-  
+
+
         <!-- <div align="center"><img src="/assets/images/icon-set.svg" class="stellar-logo"></div> -->
       </ion-content>
     </ng-template>
