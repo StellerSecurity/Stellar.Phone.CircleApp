@@ -40,5 +40,7 @@
   "info_wipe_item_one_text":"Add contact using protect Wipe Auth Token",
   "info_wipe_item_two_text":"Select contact from list",
   "info_wipe_item_three_text":"Wipe Phone!",
-  "info_brought_by_stellar":"Brought to you completely free by"
+  "info_brought_by_stellar":"Brought to you completely free by",
+
+  "understand-circle": "Understand how Circle works by clicking here."
 }
