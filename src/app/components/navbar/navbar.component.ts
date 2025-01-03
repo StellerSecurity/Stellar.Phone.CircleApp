@@ -8,7 +8,7 @@ import { NavbarBackBtn } from './directives/navbar-back-btn.directive';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  constructor(private navController: NavController) {}
+  constructor() {}
 
   @Input() title: string = '';
   @Input() color?: string = 'circle-purple';
@@ -20,7 +20,6 @@ export class NavbarComponent {
 
   @ContentChild(NavbarBackBtn) backBtn?: NavbarBackBtn;
 
-  ngOnInit() {}
 
   handleBackButtonClick() {
     this.onClickBackButton.emit();
