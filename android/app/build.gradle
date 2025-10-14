@@ -2,13 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "stellar.circle.app"
-    compileSdkVersion 35
+    compileSdkVersion 34
     defaultConfig {
         applicationId "stellar.circle.app"
-        minSdkVersion 35
-        targetSdkVersion 35
-        versionCode 7
-        versionName "1.5.1"
+        minSdkVersion 34
+        //noinspection OldTargetApi
+        targetSdkVersion 34
+        versionCode 9
+        versionName "1.5.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
