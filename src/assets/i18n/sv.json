@@ -15,13 +15,13 @@
   "contact_storage_note": "Alla kontakter du lägger till här lagras på din telefon och inte på någon server.",
 
   "wipe_confirmation_header": "Varning",
-  "wipe_confirmation_message": "All data kommer att raderas från telefonen. Skriv in kontaktens namn för att bekräfta.",
+  "wipe_confirmation_message": "Alla data på telefonen raderas permanent. Fortsätta?",
   "cancel_button": "Avbryt",
   "okay_button": "OK",
   "close_button": "Stäng",
   "please_wait_message": "Vänligen vänta...",
-  "wipe_set_header": "{{ contactName }}s telefon är inställd på att raderas",
-  "wipe_set_message": "Telefonen måste vara online innan den raderas och vi får ingen status om telefonen har raderats eller inte.",
+  "wipe_set_header": "Radering begärd för {{ contactName }}",
+  "wipe_set_message": "Telefonen raderas när Protect tar emot begäran online. Circle kan inte bekräfta när raderingen är slutförd.",
   "delete_confirmation_header": "Varning",
   "delete_confirmation_message": "Är du säker på att du vill ta bort {{ contactName }} från dina kontakter?",
 
@@ -42,5 +42,8 @@
   "info_wipe_item_three_text": "Radera telefon!",
   "info_brought_by_stellar": "Erbjuds helt gratis av",
 
-  "understand-circle": "Förstå hur Circle fungerar genom att klicka här."
+  "understand-circle": "Förstå hur Circle fungerar genom att klicka här.",
+  "error_title": "Fel",
+  "token_invalid_message": "Kontrollera smeknamnet och raderingstoken och försök igen.",
+  "wipe_request_failed_message": "Mottagandet kunde inte bekräftas. Försök igen; Circle skickar samma begäran på nytt."
 }

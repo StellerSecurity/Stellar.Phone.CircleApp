@@ -15,13 +15,13 @@
   "contact_storage_note": "All contacts you add here are stored on your phone, and not on any server.",
 
   "wipe_confirmation_header": "Warning",
-  "wipe_confirmation_message": "All Data will be deleted from phone. Input Contact name to confirm it.",
+  "wipe_confirmation_message": "All data on this phone will be permanently deleted. Continue?",
   "cancel_button": "Cancel",
   "okay_button": "Okay",
   "close_button": "Close",
   "please_wait_message": "Please wait...",
-  "wipe_set_header": "{{ contactName }}'s Phone Set to Wiped",
-  "wipe_set_message": "The phone must be online before it gets wiped also, we don't receive a status if the phone has been wiped or not.",
+  "wipe_set_header": "Wipe requested for {{ contactName }}",
+  "wipe_set_message": "The phone will be wiped when Protect receives the request online. Circle cannot confirm when the wipe is complete.",
   "delete_confirmation_header": "Warning",
   "delete_confirmation_message": "Are you sure you want to remove {{ contactName }} from your contacts?",
 
@@ -42,5 +42,8 @@
   "info_wipe_item_three_text":"Wipe Phone!",
   "info_brought_by_stellar":"Brought to you completely free by",
 
-  "understand-circle": "Understand how Circle works by clicking here."
+  "understand-circle": "Understand how Circle works by clicking here.",
+  "error_title": "Error",
+  "token_invalid_message": "Check the nickname and wipe token, then try again.",
+  "wipe_request_failed_message": "Receipt could not be confirmed. Try again; Circle will resend the same request."
 }

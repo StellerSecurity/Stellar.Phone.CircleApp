@@ -1,9 +1,10 @@
+import {WipeDialogService} from '../../services/wipe-dialog.service';
 import { Component, EventEmitter, OnInit,Output } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Circle } from 'src/app/models/circle.model';
 import { CircledataService } from 'src/app/services/circledata.service';
 import {Location} from '@angular/common';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { WipeStatusEnum } from 'src/app/WipeStatusEnum';
 
@@ -15,11 +16,12 @@ import { WipeStatusEnum } from 'src/app/WipeStatusEnum';
 export class ContactDetailComponent  implements OnInit {
   routerNavigation:any
   @Output() DataFromChild = new EventEmitter<Circle[]>();
-  constructor(private activatedRoute: ActivatedRoute, private router: Router,public circleDataService: CircledataService,private _location: Location,private alertController: AlertController,private translate: TranslateService, private loadingCtrl: LoadingController,) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,public circleDataService: CircledataService,private _location: Location,private alertController: AlertController,private translate: TranslateService, private wipeDialog: WipeDialogService,) {
 
    }
 
   ngOnInit() {
+    void this.loadComponentData();
     this.routerNavigation = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         // Handle route change here
@@ -46,86 +48,7 @@ goBack(){
 
 public async wipe() {
   const contact = this.originalData[this.id];
-
-  const alert = await this.alertController.create({
-    cssClass: "wipe-out-alert alert-with-icon",
-    header: this.translate.instant('wipe_alert_header',{ contactName: contact.name }),
-    message: `${this.translate.instant('wipe_confirmation_message')}`,
-    inputs: [
-      {
-        name: 'username',
-        type: 'text',
-        placeholder: 'Enter Name To Verify Wipe',
-        cssClass:'alert-input',
-        value: '',
-      }
-    ],
-    buttons: [
-      {
-        text: this.translate.instant('cancel_button'),
-        role: 'cancel',
-        cssClass: 'secondary',
-        id: 'cancel-button',
-        handler: (blah) => {
-
-        }
-      }, {
-        text: this.translate.instant('wipe_phone_button'),
-        id: 'confirm-button',
-        cssClass: 'danger',
-        handler: async (data) => {
-          const username = data.username.trim();
-          if(username){
-            const loading = await this.loadingCtrl.create({
-              message: this.translate.instant('please_wait_message')
-            });
-
-            await loading.present();
-
-            (await this.circleDataService.wipe(contact))
-              .subscribe(async response => {
-
-                await loading.dismiss();
-
-                const alert = await this.alertController.create({
-                  cssClass: "wipe-out-set alert-with-icon",
-                  header: this.translate.instant('wipe_set_header',{ contactName: contact.name }),
-                  message: this.translate.instant('wipe_set_message'),
-                  buttons: [this.translate.instant('close_button')],
-                });
-
-                await alert.present();
-
-                contact.wipe_status = WipeStatusEnum.WIPING;
-
-                await this.circleDataService.update(this.id, contact);
-                this.loadComponentData()
-
-              });
-              return true
-          }
-         else{
-          const errorAlert = await this.alertController.create({
-            header: 'Error',
-            message: 'Please enter a username',
-            cssClass:'error-alert',
-            buttons: [{
-              text: 'OK',
-              handler: () => {
-                // Do not dismiss the alert
-              }
-            }]
-          });
-          await errorAlert.present();
-          return false
-         }
-
-        }
-      }
-    ]
-  });
-
-  await alert.present();
+  if (await this.wipeDialog.confirm(contact)) await this.loadComponentData();
 }
 public async delete() {
   const contact = this.originalData[this.id];

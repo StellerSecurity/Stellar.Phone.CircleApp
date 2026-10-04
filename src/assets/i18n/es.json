@@ -15,13 +15,13 @@
   "contact_storage_note": "Todos los contactos que agregues aquí se almacenan en tu teléfono y no en ningún servidor.",
 
   "wipe_confirmation_header": "Advertencia",
-  "wipe_confirmation_message": "Todos los datos serán borrados del teléfono. Introduce el nombre del contacto para confirmarlo.",
+  "wipe_confirmation_message": "Todos los datos de este teléfono se eliminarán permanentemente. ¿Continuar?",
   "cancel_button": "Cancelar",
   "okay_button": "Aceptar",
   "close_button": "Cerrar",
   "please_wait_message": "Por favor espera...",
-  "wipe_set_header": "Teléfono de {{ contactName }} listo para borrar",
-  "wipe_set_message": "El teléfono debe estar en línea antes de ser borrado, y no recibimos un estado de si el teléfono ha sido borrado o no.",
+  "wipe_set_header": "Borrado solicitado para {{ contactName }}",
+  "wipe_set_message": "El teléfono se borrará cuando Protect reciba la solicitud en línea. Circle no puede confirmar cuándo se completa el borrado.",
   "delete_confirmation_header": "Advertencia",
   "delete_confirmation_message": "¿Estás seguro de que deseas eliminar a {{ contactName }} de tus contactos?",
 
@@ -42,5 +42,8 @@
   "info_wipe_item_three_text":"¡Borrar teléfono!",
   "info_brought_by_stellar":"Traído a ti completamente gratis por",
 
-  "understand-circle": "Entiende cómo funciona Circle haciendo clic aquí."
+  "understand-circle": "Entiende cómo funciona Circle haciendo clic aquí.",
+  "error_title": "Error",
+  "token_invalid_message": "Comprueba el apodo y el token de borrado e inténtalo de nuevo.",
+  "wipe_request_failed_message": "No se pudo confirmar la recepción. Inténtalo de nuevo; Circle reenviará la misma solicitud."
 }

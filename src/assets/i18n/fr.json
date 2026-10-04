@@ -15,13 +15,13 @@
   "contact_storage_note": "Tous les contacts que vous ajoutez ici sont stockés sur votre téléphone, et non sur un serveur.",
 
   "wipe_confirmation_header": "Attention",
-  "wipe_confirmation_message": "Toutes les données seront supprimées du téléphone. Entrez le nom du contact pour le confirmer.",
+  "wipe_confirmation_message": "Toutes les données de ce téléphone seront définitivement effacées. Continuer ?",
   "cancel_button": "Annuler",
   "okay_button": "OK",
   "close_button": "Fermer",
   "please_wait_message": "Veuillez patienter...",
-  "wipe_set_header": "Le téléphone de {{ contactName }} est prêt à être effacé",
-  "wipe_set_message": "Le téléphone doit être en ligne avant d'être effacé et nous ne recevons pas de statut indiquant si le téléphone a été effacé ou non.",
+  "wipe_set_header": "Effacement demandé pour {{ contactName }}",
+  "wipe_set_message": "Le téléphone sera effacé lorsque Protect recevra la demande en ligne. Circle ne peut pas confirmer la fin de l’effacement.",
   "delete_confirmation_header": "Attention",
   "delete_confirmation_message": "Êtes-vous sûr de vouloir supprimer {{ contactName }} de vos contacts?",
 
@@ -42,5 +42,8 @@
   "info_wipe_item_three_text":"Effacer le téléphone!",
   "info_brought_by_stellar":"Offert gratuitement par",
 
-  "understand-circle": "Comprenez comment Circle fonctionne en cliquant ici."
+  "understand-circle": "Comprenez comment Circle fonctionne en cliquant ici.",
+  "error_title": "Erreur",
+  "token_invalid_message": "Vérifiez le surnom et le jeton d’effacement, puis réessayez.",
+  "wipe_request_failed_message": "La réception n’a pas pu être confirmée. Réessayez ; Circle renverra la même demande."
 }

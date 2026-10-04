@@ -15,13 +15,13 @@
   "contact_storage_note": "Alle contacten die je hier toevoegt, worden op je telefoon opgeslagen en niet op een server.",
 
   "wipe_confirmation_header": "Waarschuwing",
-  "wipe_confirmation_message": "Alle gegevens worden van de telefoon verwijderd. Voer de naam van het contact in om dit te bevestigen.",
+  "wipe_confirmation_message": "Alle gegevens op deze telefoon worden permanent gewist. Doorgaan?",
   "cancel_button": "Annuleren",
   "okay_button": "OK",
   "close_button": "Sluiten",
   "please_wait_message": "Even geduld aub...",
-  "wipe_set_header": "{{ contactName }}'s telefoon is ingesteld om te wissen",
-  "wipe_set_message": "De telefoon moet online zijn voordat deze wordt gewist en we ontvangen geen status over of de telefoon is gewist of niet.",
+  "wipe_set_header": "Wissen aangevraagd voor {{ contactName }}",
+  "wipe_set_message": "De telefoon wordt gewist zodra Protect het verzoek online ontvangt. Circle kan niet bevestigen wanneer het wissen is voltooid.",
   "delete_confirmation_header": "Waarschuwing",
   "delete_confirmation_message": "Weet je zeker dat je {{ contactName }} uit je contacten wilt verwijderen?",
 
@@ -42,5 +42,8 @@
   "info_wipe_item_three_text":"Wis telefoon!",
   "info_brought_by_stellar":"Gratis aangeboden door",
 
-  "understand-circle": "Begrijp hoe Circle werkt door hier te klikken."
+  "understand-circle": "Begrijp hoe Circle werkt door hier te klikken.",
+  "error_title": "Fout",
+  "token_invalid_message": "Controleer de bijnaam en het wistoken en probeer het opnieuw.",
+  "wipe_request_failed_message": "Ontvangst kon niet worden bevestigd. Probeer het opnieuw; Circle verstuurt hetzelfde verzoek opnieuw."
 }

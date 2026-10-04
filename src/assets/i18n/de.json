@@ -15,13 +15,13 @@
   "contact_storage_note": "Alle Kontakte, die du hier hinzufügst, werden auf deinem Telefon gespeichert und nicht auf einem Server.",
 
   "wipe_confirmation_header": "Warnung",
-  "wipe_confirmation_message": "Alle Daten werden vom Telefon gelöscht. Gib den Kontaktnamen ein, um dies zu bestätigen.",
+  "wipe_confirmation_message": "Alle Daten auf diesem Telefon werden dauerhaft gelöscht. Fortfahren?",
   "cancel_button": "Abbrechen",
   "okay_button": "Okay",
   "close_button": "Schließen",
   "please_wait_message": "Bitte warten...",
-  "wipe_set_header": "{{ contactName }}'s Telefon wird zum Löschen vorbereitet",
-  "wipe_set_message": "Das Telefon muss online sein, bevor es gelöscht wird, und wir erhalten keinen Status darüber, ob das Telefon gelöscht wurde oder nicht.",
+  "wipe_set_header": "Löschung für {{ contactName }} angefordert",
+  "wipe_set_message": "Das Telefon wird gelöscht, sobald Protect die Anfrage online empfängt. Circle kann den Abschluss der Löschung nicht bestätigen.",
   "delete_confirmation_header": "Warnung",
   "delete_confirmation_message": "Bist du sicher, dass du {{ contactName }} aus deinen Kontakten entfernen möchtest?",
 
@@ -42,5 +42,8 @@
   "info_wipe_item_three_text":"Telefon löschen!",
   "info_brought_by_stellar":"Kostenlos bereitgestellt von",
 
-  "understand-circle": "Verstehe, wie Circle funktioniert, indem du hier klickst."
+  "understand-circle": "Verstehe, wie Circle funktioniert, indem du hier klickst.",
+  "error_title": "Fehler",
+  "token_invalid_message": "Prüfe den Spitznamen und das Wipe-Token und versuche es erneut.",
+  "wipe_request_failed_message": "Der Empfang konnte nicht bestätigt werden. Versuche es erneut; Circle sendet dieselbe Anfrage noch einmal."
 }

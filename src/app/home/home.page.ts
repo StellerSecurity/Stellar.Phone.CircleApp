@@ -1,4 +1,6 @@
-import { Component, SimpleChanges, inject } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import {firstValueFrom} from 'rxjs';
+import { Component } from '@angular/core';
 import { Circle } from '../models/circle.model';
 import { CircledataService } from '../services/circledata.service';
 import { AlertController, LoadingController } from '@ionic/angular';
@@ -13,7 +15,7 @@ import { NavigationEnd, Router } from '@angular/router';
 export class HomePage  {
   public circles: Circle[] = [];
 
-  public addCircleModal = new Circle();
+  public adding = false;
 
   public addCircleModelVisible = false;
 
@@ -31,9 +33,9 @@ export class HomePage  {
     public circleDataService: CircledataService,
     public alertController: AlertController,
     private loadingCtrl: LoadingController,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {
-    this.addCircleModal.wipe_status = WipeStatusEnum.ACTIVE;
     this.init().then((r) => { });
 
     this.routerNavigation = this.router.events.subscribe(event => {
@@ -45,7 +47,7 @@ export class HomePage  {
   }
 
   public modelToggleAdd() {
-    this.addCircleModelVisible = !this.addCircleModelVisible;
+    if (!this.adding) this.addCircleModelVisible = !this.addCircleModelVisible;
   }
 
   /**
@@ -66,64 +68,37 @@ export class HomePage  {
   }
 
   public async addCircle() {
-    if (this.circleNameAdd.length == 0) {
+    if (this.adding) return;
+    this.adding = true;
+    let loading: HTMLIonLoadingElement | undefined;
+    try {
+      const contact = new Circle();
+      contact.name = this.circleNameAdd.trim();
+      contact.wipe_auth_token = this.circleToken.trim();
+      contact.wipe_status = WipeStatusEnum.ACTIVE;
+      if (!contact.name || !contact.wipe_auth_token) throw new Error('Missing contact information');
+
+      loading = await this.loadingCtrl.create({message: this.translate.instant('please_wait_message')});
+      await loading.present();
+      const response = await firstValueFrom(await this.circleDataService.circleTokenCheck(contact));
+      if (response.response_code !== 200) throw new Error('Invalid token');
+      await this.circleDataService.add(contact);
+      this.circleNameAdd = '';
+      this.circleToken = '';
+      this.addCircleModelVisible = false;
+      await this.init();
+    } catch {
+      if (loading) { await loading.dismiss(); loading = undefined; }
       const alert = await this.alertController.create({
-        header: 'Error',
-        message: 'Your contact must have a nick-name. It cannot be empty.',
-        buttons: ['OK'],
+        header: this.translate.instant('error_title'),
+        message: this.translate.instant('token_invalid_message'),
+        buttons: [this.translate.instant('close_button')],
       });
-
       await alert.present();
-      return;
+    } finally {
+      if (loading) await loading.dismiss();
+      this.adding = false;
     }
-
-    if (this.circleToken.length == 0) {
-      const alert = await this.alertController.create({
-        header: 'Error',
-        message: 'Your contact must have a Wipe Token. It cannot be empty. It can be found in the Protect-app.',
-        buttons: ['OK'],
-      });
-
-      await alert.present();
-      return;
-    }
-
-    const loading = await this.loadingCtrl.create({
-      message: 'Checking if token is correct...',
-    });
-
-    await loading.present();
-
-    this.addCircleModal.name = this.circleNameAdd;
-    this.addCircleModal.wipe_auth_token = this.circleToken;
-
-    (
-      await this.circleDataService.circleTokenCheck(this.addCircleModal)
-    ).subscribe(async (response) => {
-      await loading.dismiss();
-
-      if (response.response_code !== 200) {
-        const alert = await this.alertController.create({
-          header: 'Error',
-          message: response.message,
-          buttons: ['OK'],
-        });
-
-        await alert.present();
-        return;
-      }
-
-      if (response.response_code === 200) {
-        this.circleNameAdd = '';
-        this.circleToken = '';
-
-        await this.circleDataService.add(this.addCircleModal);
-        this.init().then((r) => { });
-
-        this.modelToggleAdd();
-        return;
-      }
-    });
   }
 
   public handleSearch() {

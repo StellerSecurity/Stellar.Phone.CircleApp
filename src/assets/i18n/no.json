@@ -15,13 +15,13 @@
   "contact_storage_note": "Alle kontakter du legger til her lagres på telefonen din, og ikke på noen server.",
 
   "wipe_confirmation_header": "Advarsel",
-  "wipe_confirmation_message": "Alle data vil bli slettet fra telefonen. Skriv inn kontaktnavnet for å bekrefte.",
+  "wipe_confirmation_message": "Alle data på telefonen blir slettet permanent. Fortsette?",
   "cancel_button": "Avbryt",
   "okay_button": "Ok",
   "close_button": "Lukk",
   "please_wait_message": "Vennligst vent...",
-  "wipe_set_header": "{{ contactName }}s telefon er satt til å bli slettet",
-  "wipe_set_message": "Telefonen må være online før den blir slettet, og vi mottar ikke en status på om telefonen har blitt slettet eller ikke.",
+  "wipe_set_header": "Sletting forespurt for {{ contactName }}",
+  "wipe_set_message": "Telefonen slettes når Protect mottar forespørselen på nett. Circle kan ikke bekrefte når slettingen er fullført.",
   "delete_confirmation_header": "Advarsel",
   "delete_confirmation_message": "Er du sikker på at du vil fjerne {{ contactName }} fra kontaktene dine?",
 
@@ -42,5 +42,8 @@
   "info_wipe_item_three_text":"Slett telefon!",
   "info_brought_by_stellar":"Brakt til deg helt gratis av",
 
-  "understand-circle": "Forstå hvordan Circle fungerer ved å klikke her."
+  "understand-circle": "Forstå hvordan Circle fungerer ved å klikke her.",
+  "error_title": "Feil",
+  "token_invalid_message": "Kontroller kallenavnet og slettetokenet, og prøv igjen.",
+  "wipe_request_failed_message": "Mottaket kunne ikke bekreftes. Prøv igjen; Circle sender den samme forespørselen på nytt."
 }
