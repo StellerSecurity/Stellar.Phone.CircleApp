@@ -1,0 +1,13 @@
+{
+  "libvips-8.11.3-darwin-arm64v8.tar.br": "sha512-/c3HfLH7I980qxwOFd1mUNg8RPS06h7tGcQMkICuLSIA/PDKydRkXtEnrfD+IpkQdR5/5crHO5Bj401S1/v5lw==",
+  "libvips-8.11.3-darwin-x64.tar.br": "sha512-tD45aqMyfJgG1+nMGhY2K9PehQ1r95grVGY6DzcakogVbGZfmhTuzwEu3JQyJuloDzqOjHtrIf+nKzQajZ/pNg==",
+  "libvips-8.11.3-linux-arm64v8.tar.br": "sha512-DiSqrYsIOgdrysD54wbPDiF6oscjPZa+kq+Q/oGV6cl1b5dENgHRFOeX/ZdonXpDmmNrmAqHIRSEsbXC7lO9kg==",
+  "libvips-8.11.3-linux-armv6.tar.br": "sha512-+lRh125c5Yh1NEzYmD0MSk/HxalZp2Q64hQPXrf/CS2HiY3iUmZ0eBtZXyXcQTrhmzOGo6fWwGvFsX19MFcfgQ==",
+  "libvips-8.11.3-linux-armv7.tar.br": "sha512-20xff/gAS6Ec/8JkA0QRsMzr+ybNLW1iXv6ym2Q7dyTAM6tzSQMDMYVL++mUArToWQb6yzxNjJ1iStCbkkT1wg==",
+  "libvips-8.11.3-linux-x64.tar.br": "sha512-tVDEp6F9hW4/2ftrWTQFgkkmpk01nfadjezSIJFQW6sZqRoXZEpScqjgQq/wrDls1TgAVSBc4mFNesGVmRN7Og==",
+  "libvips-8.11.3-linuxmusl-arm64v8.tar.br": "sha512-fL7nUBRXbVhT+whxwJCXGaLZIq4DBzsgumImw77S8hvI0wYflV8i2mEUfOzSaqLnQwb4TWoW4C4t3i3HDmqCiw==",
+  "libvips-8.11.3-linuxmusl-x64.tar.br": "sha512-fQIs7rAJtJS22Q9dSbj0NPjY2cM2U45Xdq7Mysy6vstdtIpqTjuKF4995mgh878Co4FJk5HKXTnAPBiLYuNO5A==",
+  "libvips-8.11.3-win32-arm64v8.tar.br": "sha512-6V3sJQ/ih/cVGR7Wov/K4G+bnvxeTdV+qIF64B0CWVSWwdFvKi3QNZY6TMt7QQWx/4f8BQEc2XnKigl8t2V0HQ==",
+  "libvips-8.11.3-win32-ia32.tar.br": "sha512-m6PyNacb7b0NfBGLIVIRYIJvUbioht93bsc8MXFAi7xdhFe8XwF7QGQI3/KLzSdK77RDPpa7XDoD1PqS4Tv6Dw==",
+  "libvips-8.11.3-win32-x64.tar.br": "sha512-plAM2JqFRAl5GUCM2Nu72/xIlaWp3L/3yMnt/vbJg6I9RXWPZBM+isTZXwEHQGLxAS0iFfpOHVO1jaup9OC+Iw=="
+}

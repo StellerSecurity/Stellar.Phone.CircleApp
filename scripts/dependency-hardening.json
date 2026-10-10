@@ -1,0 +1,10 @@
+{
+  "capacitor": {
+    "node_modules/@capacitor/cli": "7.4.3",
+    "node_modules/@capacitor/assets/node_modules/@capacitor/cli": "5.7.8"
+  },
+  "sharp": {
+    "path": "node_modules/cordova-res/node_modules/sharp",
+    "patchedSha256": "046cf5fdb765b2fc3617ce9a741a0787b80875c491885c5a04908b3b63b9fc4c"
+  }
+}

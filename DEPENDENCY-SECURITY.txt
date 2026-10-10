@@ -1,0 +1,49 @@
+Dependency setup and Capacitor commands
+
+After dependency review and approval, install with:
+  npm run deps:install
+
+This uses the committed lockfile, disables dependency install hooks, and applies
+the repository's fixes before returning successfully. No versions are upgraded.
+Do not override ignore-scripts or use npm rebuild to enable every install hook.
+
+For an existing installation:
+  npm run deps:harden
+
+Use the local CLI through:
+  npm run cap -- sync android
+  npm run cap -- open android
+
+This wrapper applies the fixes before loading Capacitor. Build, start, watch,
+ng and resources scripts also apply them explicitly; npm lifecycle hooks are not
+used because ignore-scripts disables those hooks. A bare npm ci followed by
+npx cap bypasses this setup. Use deps:install and the cap command above instead.
+
+Capacitor CLI telemetry is removed from every reviewed installed CLI copy,
+including the one nested under @capacitor/assets. Command arguments, passwords,
+errors and identifiers are neither collected nor sent by that telemetry module.
+The repository does not read or change the developer's global telemetry settings.
+Dependency layout/version changes stop hardening until the policy is reviewed.
+
+Circle: sharp 0.29.3 / libvips 8.11.3
+
+The legacy installer is patched only when its SHA-256 matches the reviewed
+source. Both cached and newly downloaded libvips archives must match a pinned
+SHA-512 before extraction. The exact verified bytes are passed to the extractor.
+Unknown platforms, changed archives and unknown installer sources are refused.
+Existing unverified sharp vendor files require a clean dependency installation;
+the hardener will not silently accept or delete them.
+
+Checksum source (eleven platform-specific .tar.br.integrity text files):
+  https://github.com/lovell/sharp-libvips/releases/tag/v8.11.3
+Reviewed sharp installer source:
+  https://github.com/lovell/sharp/blob/1ff84b20b7d9b351786fb06899255cea59aa123c/install/libvips.js
+
+The safe install command does not run native dependency setup. Image generation
+using sharp/cordova-res may need separately reviewed native setup. This change
+does not verify sharp's separate prebuild-install binding download or establish
+that every other dependency is safe. Do not enable all lifecycle scripts to fix
+a missing native binding.
+
+Run the first-party regression tests without installing packages:
+  node --test scripts/dependency-hardening.test.cjs

@@ -4,13 +4,17 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "ng": "node scripts/harden-dependencies.cjs && ng",
+    "start": "node scripts/harden-dependencies.cjs && ng serve",
+    "build": "node scripts/harden-dependencies.cjs && ng build",
+    "watch": "node scripts/harden-dependencies.cjs && ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "resources": "cordova-res ios && cordova-res android && node scripts/resources.js"
+    "resources": "node scripts/harden-dependencies.cjs && cordova-res ios && cordova-res android && node scripts/resources.js",
+    "deps:install": "npm ci --legacy-peer-deps --ignore-scripts --no-audit --no-fund && node scripts/harden-dependencies.cjs",
+    "deps:harden": "node scripts/harden-dependencies.cjs",
+    "cap": "node scripts/capacitor.cjs",
+    "test:dependency-hardening": "node --test scripts/dependency-hardening.test.cjs"
   },
   "private": true,
   "dependencies": {
